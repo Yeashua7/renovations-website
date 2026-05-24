@@ -7,14 +7,15 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Discover premier home remodelers for kitchens, bathrooms, basements, decks, and full-home additions with [Company Name], your trusted Licensed & Insured general contractor.">
+    <meta name="author" content="[Company Name]">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="#">
+    <link rel="canonical" href="./index.html">
     
     <!-- Open Graph (Facebook/LinkedIn) Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Top Home Remodeler & General Contractor | [Company Name]">
     <meta property="og:description" content="Discover premier home remodelers for kitchens, bathrooms, basements, decks, and full-home additions with [Company Name], your trusted Licensed & Insured general contractor.">
-    <meta property="og:url" content="#">
+    <meta property="og:url" content="./index.html">
     <meta property="og:image" content="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&h=630&q=80">
     <meta property="og:site_name" content="[Company Name]">
     
@@ -104,38 +105,57 @@
             pointer-events: auto;
             transform: scale(1);
         }
+        
+        /* DRY styles for repeated elements */
+        .btn-primary {
+            @apply bg-brand-accent hover:bg-brand-accentHover text-brand-navy text-center px-8 py-4 rounded-xl font-bold tracking-wide transition-all duration-200 shadow-lg shadow-brand-accent/20;
+        }
+        .btn-secondary {
+            @apply border-2 border-white/20 hover:border-brand-accent hover:bg-white/5 text-white hover:text-brand-accent text-center px-8 py-4 rounded-xl font-bold tracking-wide transition-all duration-200;
+        }
+        .nav-link {
+            @apply text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group;
+        }
+        .nav-link-underline {
+            @apply absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full;
+        }
+        .service-card {
+            @apply bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 transition-all duration-300 hover:shadow-cardhover hover:-translate-y-1.5 flex flex-col group;
+        }
     </style>
 </head>
 <body class="font-body bg-brand-cream text-brand-navy overflow-x-hidden antialiased">
 
-    <!-- TOP BAR (Utility info & Trust signals) -->
-    <div class="bg-brand-navy text-white text-xs py-2 px-4 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center gap-2">
-                <span class="inline-flex items-center justify-center bg-brand-accent text-brand-navy font-bold px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">
-                    <i class="fa-solid fa-shield-halved mr-1"></i> LICENSED & INSURED
-                </span>
-                <span class="text-slate-400">Residential Remodeling & General Contracting</span>
-            </div>
-            <div class="flex items-center gap-4 text-slate-300">
-                <a href="tel:[Phone Number]" class="hover:text-brand-accent transition duration-150 flex items-center gap-1.5">
-                    <i class="fa-solid fa-phone text-brand-accent"></i> [Phone Number]
-                </a>
-                <span class="hidden md:inline">|</span>
-                <span class="hidden md:flex items-center gap-1.5">
-                    <i class="fa-regular fa-clock text-brand-accent"></i> Mon - Fri: 8AM - 7PM
-                </span>
+    <!-- HEADER: Navigation, Topbar & Contact Anchors -->
+    <header id="main-header" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
+        
+        <!-- TOP UTILITY BAR -->
+        <div class="bg-brand-navy text-white text-xs py-2 px-4 border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <span class="inline-flex items-center justify-center bg-brand-accent text-brand-navy font-bold px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">
+                        <i class="fa-solid fa-shield-halved mr-1"></i> LICENSED & INSURED
+                    </span>
+                    <span class="text-slate-400">Residential Remodeling & General Contracting</span>
+                </div>
+                <div class="flex items-center gap-4 text-slate-300">
+                    <a href="tel:[Phone Number]" aria-label="Call [Company Name] at [Phone Number]" class="hover:text-brand-accent transition duration-150 flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-brand-accent"></i> [Phone Number]
+                    </a>
+                    <span class="hidden md:inline">|</span>
+                    <span class="hidden md:flex items-center gap-1.5">
+                        <i class="fa-regular fa-clock text-brand-accent"></i> Mon - Fri: 8AM - 7PM
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- MAIN NAV HEADER (Sticky & Premium Glassmorphism) -->
-    <header id="main-header" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
+        <!-- MAIN HEADER CONTAINER -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo Block -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="flex items-center gap-3">
+                    <a href="./index.html" aria-label="Go to home page" class="flex items-center gap-3">
                         <div class="bg-brand-navy p-2.5 rounded-lg flex items-center justify-center text-white relative">
                             <i class="fa-solid fa-house-chimney-window text-2xl text-brand-accent"></i>
                             <div class="absolute -top-1 -right-1 w-3 h-3 bg-brand-accent rounded-full border border-brand-navy"></div>
@@ -148,28 +168,28 @@
                 </div>
                 
                 <!-- Desktop Navigation Menu -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#hero" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
+                <nav class="hidden md:flex space-x-8" aria-label="Main navigation menu">
+                    <a href="#hero" aria-label="Navigate to Home section" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
                         Home
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#services" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
+                    <a href="#services" aria-label="Navigate to Services section" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
                         Services
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#about" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
+                    <a href="#about" aria-label="Navigate to About Us section" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
                         About Us
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#benefits" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
+                    <a href="#benefits" aria-label="Navigate to Why Choose Us section" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
                         Why Choose Us
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#testimonials" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
+                    <a href="#testimonials" aria-label="Navigate to Customer Reviews section" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
                         Reviews
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#contact" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
+                    <a href="#contact" aria-label="Navigate to Contact section" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
                         Contact
                         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
                     </a>
@@ -177,14 +197,14 @@
                 
                 <!-- Desktop Navigation CTA -->
                 <div class="hidden md:flex items-center gap-4">
-                    <a href="#contact" class="bg-brand-navy text-white hover:bg-brand-accent hover:text-brand-navy px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide shadow-premium border-2 border-brand-navy hover:border-brand-accent transition duration-200">
+                    <a href="#contact" aria-label="Get started on a free estimate" class="bg-brand-navy text-white hover:bg-brand-accent hover:text-brand-navy px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide shadow-premium border-2 border-brand-navy hover:border-brand-accent transition duration-200">
                         Get Started
                     </a>
                 </div>
                 
                 <!-- Mobile Navigation Menu Toggle -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-toggle" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-brand-navy hover:text-brand-accent hover:bg-slate-100 focus:outline-none transition duration-150" aria-controls="mobile-menu" aria-expanded="false">
+                    <button id="mobile-menu-toggle" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-brand-navy hover:text-brand-accent hover:bg-slate-100 focus:outline-none transition duration-150" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle mobile navigation menu">
                         <span class="sr-only">Open main menu</span>
                         <i id="hamburger-icon" class="fa-solid fa-bars text-xl"></i>
                     </button>
@@ -196,823 +216,832 @@
         <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-50 bg-brand-navy/60 backdrop-blur-sm transition-opacity duration-300">
             <div class="fixed inset-y-0 right-0 w-4/5 max-w-sm bg-white shadow-2xl flex flex-col p-6 space-y-6 transform translate-x-full transition-transform duration-300 ease-out" id="mobile-menu-drawer">
                 <div class="flex items-center justify-between">
-                    <a href="#" class="flex items-center gap-2">
+                    <a href="./index.html" class="flex items-center gap-2">
                         <span class="font-heading font-extrabold text-lg text-brand-navy">[COMPANY NAME]</span>
                     </a>
-                    <button id="mobile-menu-close" class="text-brand-navy hover:text-brand-accent p-1">
+                    <button id="mobile-menu-close" aria-label="Close mobile navigation menu" class="text-brand-navy hover:text-brand-accent p-1">
                         <i class="fa-solid fa-xmark text-xl"></i>
                     </button>
                 </div>
                 
                 <div class="flex flex-col space-y-4 font-medium text-lg pt-4">
-                    <a href="#hero" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
+                    <a href="#hero" aria-label="Navigate to Home section" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
                         <span>Home</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300"></i>
                     </a>
-                    <a href="#services" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
+                    <a href="#services" aria-label="Navigate to Services section" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
                         <span>Services</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300"></i>
                     </a>
-                    <a href="#about" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
+                    <a href="#about" aria-label="Navigate to About section" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
                         <span>About Us</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300"></i>
                     </a>
-                    <a href="#benefits" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
+                    <a href="#benefits" aria-label="Navigate to Why Choose Us section" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
                         <span>Why Choose Us</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300"></i>
                     </a>
-                    <a href="#testimonials" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
+                    <a href="#testimonials" aria-label="Navigate to Customer Reviews section" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
                         <span>Reviews</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300"></i>
                     </a>
-                    <a href="#contact" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
+                    <a href="#contact" aria-label="Navigate to Contact section" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
                         <span>Contact</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300"></i>
                     </a>
                 </div>
                 
                 <div class="pt-6 flex flex-col space-y-3">
-                    <a href="tel:[Phone Number]" class="flex items-center justify-center gap-2 bg-slate-100 text-brand-navy py-3 rounded-lg font-semibold border border-slate-200">
+                    <a href="tel:[Phone Number]" aria-label="Call direct [Phone Number]" class="flex items-center justify-center gap-2 bg-slate-100 text-brand-navy py-3 rounded-lg font-semibold border border-slate-200">
                         <i class="fa-solid fa-phone text-brand-accent"></i> [Phone Number]
                     </a>
-                    <a href="#contact" class="flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-accent text-white hover:text-brand-navy py-3 rounded-lg font-semibold shadow-premium transition duration-200">
+                    <a href="#contact" aria-label="Request a free estimate" class="flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-accent text-white hover:text-brand-navy py-3 rounded-lg font-semibold shadow-premium transition duration-200">
                         Get A Free Estimate
                     </a>
                 </div>
                 
                 <div class="mt-auto text-center text-xs text-brand-lightslate border-t border-slate-100 pt-6">
-                    <p class="font-semibold">Fully Licensed & Insured</p>
+                    <p class="font-semibold text-brand-navy">Fully Licensed & Insured</p>
                     <p class="mt-1">Serving [Location, State] & Surrounding Counties</p>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION (High impact, conversion optimized) -->
-    <section id="hero" class="relative bg-brand-navy text-white overflow-hidden py-16 lg:py-24">
-        <!-- Abstract glowing light source in corner -->
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                
-                <!-- Left text column -->
-                <div class="lg:col-span-7 flex flex-col space-y-6">
-                    <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full py-1 px-3 self-start">
-                        <i class="fa-solid fa-shield-halved text-brand-accent text-xs"></i>
-                        <span class="text-xs font-semibold tracking-wider text-slate-300 uppercase">FULLY LICENSED & INSURED CONTRACTOR</span>
-                    </div>
+    <!-- MAIN SECTION FOR SEMANTIC HTML -->
+    <main>
+        <!-- HERO SECTION (High impact, conversion optimized) -->
+        <section id="hero" class="relative bg-brand-navy text-white overflow-hidden py-16 lg:py-24">
+            <!-- Abstract glowing light source in corner -->
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
                     
-                    <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] uppercase">
-                        MAKE YOUR DREAM <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-amber-300">REMODEL</span> REAL — WITHOUT THE CONFUSION
-                    </h1>
-                    
-                    <p class="text-lg text-slate-300 max-w-xl leading-relaxed">
-                        If your home in <span class="font-semibold text-white">[Location, State]</span> needs a better layout, more space, or a modern update, our team can help. We provide code-compliant kitchen, bathroom, basement, and deck remodeling with transparent communication and quality craftsmanship.
-                    </p>
-                    
-                    <!-- Direct trust factors list -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-300 py-2">
-                        <div class="flex items-center gap-2.5">
-                            <i class="fa-solid fa-circle-check text-brand-accent"></i>
-                            <span>Fully Compliant Work</span>
+                    <!-- Left text column -->
+                    <div class="lg:col-span-7 flex flex-col space-y-6">
+                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full py-1 px-3 self-start">
+                            <i class="fa-solid fa-shield-halved text-brand-accent text-xs"></i>
+                            <span class="text-xs font-semibold tracking-wider text-slate-300 uppercase">FULLY LICENSED & INSURED CONTRACTOR</span>
                         </div>
-                        <div class="flex items-center gap-2.5">
-                            <i class="fa-solid fa-circle-check text-brand-accent"></i>
-                            <span>No Hidden Fees or Surprises</span>
-                        </div>
-                        <div class="flex items-center gap-2.5">
-                            <i class="fa-solid fa-circle-check text-brand-accent"></i>
-                            <span>Dedicated On-Site Supervision</span>
-                        </div>
-                        <div class="flex items-center gap-2.5">
-                            <i class="fa-solid fa-circle-check text-brand-accent"></i>
-                            <span>Local References Available</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Call To Actions -->
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                        <a href="#contact" class="bg-brand-accent hover:bg-brand-accentHover text-brand-navy text-center px-8 py-4 rounded-xl font-bold tracking-wide transition-all duration-200 shadow-lg shadow-brand-accent/20">
-                            SCHEDULE A FREE ESTIMATE
-                        </a>
-                        <a href="tel:[Phone Number]" class="border-2 border-white/20 hover:border-brand-accent hover:bg-white/5 text-white hover:text-brand-accent text-center px-8 py-4 rounded-xl font-bold tracking-wide transition-all duration-200 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-phone"></i> CALL US: [Phone Number]
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Right image column -->
-                <div class="lg:col-span-5 relative">
-                    <!-- Image container with drop shadow & borders -->
-                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-900 group">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=780&q=80" alt="Beautiful kitchen remodel in [Location, State]" class="w-full h-[350px] sm:h-[450px] object-cover transition-transform duration-700 group-hover:scale-105">
                         
-                        <!-- Accent overlay on hover -->
-                        <div class="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition duration-305"></div>
+                        <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] uppercase">
+                            MAKE YOUR DREAM <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-amber-300">REMODEL</span> REAL — WITHOUT THE CONFUSION
+                        </h1>
                         
-                        <!-- Floating Badge -->
-                        <div class="absolute bottom-6 left-6 bg-brand-navy/95 border border-slate-700 backdrop-blur-sm p-4 rounded-xl flex items-center gap-3.5 shadow-premium animate-float">
-                            <div class="bg-brand-accent text-brand-navy font-extrabold text-2xl w-12 h-12 rounded-lg flex items-center justify-center">
-                                17+
+                        <p class="text-lg text-slate-300 max-w-xl leading-relaxed">
+                            If your home in <span class="font-semibold text-white">[Location, State]</span> needs a better layout, more space, or a modern update, our team can help. We provide kitchen, bathroom, basement, and deck remodeling with transparent communication and quality craftsmanship.
+                        </p>
+                        
+                        <!-- Direct trust factors list -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-300 py-2">
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i>
+                                <span>Fully Compliant Work</span>
                             </div>
-                            <div class="flex flex-col">
-                                <span class="text-xs uppercase text-slate-400 font-bold tracking-wider">Years of</span>
-                                <span class="text-sm font-bold text-white">Local Craftsmanship</span>
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i>
+                                <span>No Hidden Fees or Surprises</span>
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i>
+                                <span>Dedicated On-Site Supervision</span>
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i>
+                                <span>Local References Available</span>
                             </div>
                         </div>
+                        
+                        <!-- Call To Actions -->
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                            <a href="#contact" aria-label="Schedule a free walkthrough estimate" class="bg-brand-accent hover:bg-brand-accentHover text-brand-navy text-center px-8 py-4 rounded-xl font-bold tracking-wide transition-all duration-200 shadow-lg shadow-brand-accent/20">
+                                SCHEDULE A FREE ESTIMATE
+                            </a>
+                            <a href="tel:[Phone Number]" aria-label="Call [Company Name] now" class="border-2 border-white/20 hover:border-brand-accent hover:bg-white/5 text-white hover:text-brand-accent text-center px-8 py-4 rounded-xl font-bold tracking-wide transition-all duration-200 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-phone"></i> CALL US: [Phone Number]
+                            </a>
+                        </div>
                     </div>
                     
-                    <!-- Decorative backdrops -->
-                    <div class="absolute -top-6 -left-6 w-full h-full border-2 border-brand-accent/20 rounded-2xl pointer-events-none -z-0"></div>
-                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-brand-accent to-amber-500 rounded-full blur-2xl opacity-10 -z-0"></div>
+                    <!-- Right image column -->
+                    <div class="lg:col-span-5 relative">
+                        <!-- Image container with drop shadow & borders (No loading='lazy' because it is above LCP fold) -->
+                        <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-900 group">
+                            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=780&q=80" alt="Example of modern kitchen remodel with white cabinetry in [Location, State]" fetchpriority="high" class="w-full h-[350px] sm:h-[450px] object-cover transition-transform duration-700 group-hover:scale-105">
+                            
+                            <!-- Accent overlay on hover -->
+                            <div class="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition duration-305"></div>
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-6 left-6 bg-brand-navy/95 border border-slate-700 backdrop-blur-sm p-4 rounded-xl flex items-center gap-3.5 shadow-premium animate-float">
+                                <div class="bg-brand-accent text-brand-navy font-extrabold text-2xl w-12 h-12 rounded-lg flex items-center justify-center">
+                                    17+
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-xs uppercase text-slate-400 font-bold tracking-wider">Years of</span>
+                                    <span class="text-sm font-bold text-white">Local Craftsmanship</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Decorative backdrops -->
+                        <div class="absolute -top-6 -left-6 w-full h-full border-2 border-brand-accent/20 rounded-2xl pointer-events-none -z-0"></div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-brand-accent to-amber-500 rounded-full blur-2xl opacity-10 -z-0"></div>
+                    </div>
+                    
                 </div>
-                
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- STATS COUNTER BAR (Building trust directly below Hero) -->
-    <section class="bg-slate-900 border-y border-slate-800 text-white py-12 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-800 text-center">
-                
-                <!-- Stat 1 -->
-                <div class="flex flex-col items-center justify-center p-4">
-                    <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold font-heading mb-1.5 flex items-center justify-center">
-                        <span class="counter" data-target="17">0</span>+
-                    </span>
-                    <span class="text-sm text-slate-400 uppercase tracking-widest font-bold">Years of Experience</span>
+        <!-- STATS COUNTER BAR (Building trust directly below Hero) -->
+        <section class="bg-slate-900 border-y border-slate-800 text-white py-12 relative" aria-label="Trust metrics stats">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-800 text-center">
+                    
+                    <!-- Stat 1 -->
+                    <div class="flex flex-col items-center justify-center p-4">
+                        <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold font-heading mb-1.5 flex items-center justify-center">
+                            <span class="counter" data-target="17">0</span>+
+                        </span>
+                        <span class="text-sm text-slate-400 uppercase tracking-widest font-bold">Years of Experience</span>
+                    </div>
+                    
+                    <!-- Stat 2 -->
+                    <div class="flex flex-col items-center justify-center p-4">
+                        <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold font-heading mb-1.5 flex items-center justify-center">
+                            <span class="counter" data-target="500">0</span>+
+                        </span>
+                        <span class="text-sm text-slate-400 uppercase tracking-widest font-bold">Happy Local Homeowners</span>
+                    </div>
+                    
+                    <!-- Stat 3 -->
+                    <div class="flex flex-col items-center justify-center p-4">
+                        <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold font-heading mb-1.5 flex items-center justify-center">
+                            <span class="counter" data-target="99">0</span>%
+                        </span>
+                        <span class="text-sm text-slate-400 uppercase tracking-widest font-bold">Satisfaction Rate</span>
+                    </div>
+                    
                 </div>
-                
-                <!-- Stat 2 -->
-                <div class="flex flex-col items-center justify-center p-4">
-                    <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold font-heading mb-1.5 flex items-center justify-center">
-                        <span class="counter" data-target="500">0</span>+
-                    </span>
-                    <span class="text-sm text-slate-400 uppercase tracking-widest font-bold">Happy Local Homeowners</span>
-                </div>
-                
-                <!-- Stat 3 -->
-                <div class="flex flex-col items-center justify-center p-4">
-                    <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold font-heading mb-1.5 flex items-center justify-center">
-                        <span class="counter" data-target="99">0</span>%
-                    </span>
-                    <span class="text-sm text-slate-400 uppercase tracking-widest font-bold">Satisfaction Rate</span>
-                </div>
-                
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ABOUT SECTION (Licensed & Insured message, Founder/Owner info) -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                
-                <!-- Left Image Column with multi-photo look -->
-                <div class="lg:col-span-6 relative">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-100 aspect-[4/3] group border-4 border-slate-100">
-                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Home remodeling work" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-brand-navy/10"></div>
-                    </div>
+        <!-- ABOUT SECTION (Licensed & Insured message, Founder/Owner info) -->
+        <section id="about" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                     
-                    <!-- Small Overlap Image -->
-                    <div class="absolute -bottom-10 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-square hidden sm:block bg-slate-200">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=400&q=80" alt="Carpentry detailing" class="w-full h-full object-cover">
-                    </div>
-                </div>
-                
-                <!-- Right Text Column -->
-                <div class="lg:col-span-6 flex flex-col space-y-6">
-                    <div class="flex items-center gap-2 text-brand-accent">
-                        <span class="h-0.5 w-8 bg-brand-accent"></span>
-                        <span class="text-xs font-bold uppercase tracking-widest">ABOUT [COMPANY NAME]</span>
-                    </div>
-                    
-                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy uppercase tracking-tight leading-tight">
-                        TRUSTED REMODELING WITH A REPUTATION FOR EXCELLENCE
-                    </h2>
-                    
-                    <p class="text-slate-600 leading-relaxed">
-                        Our remodeling business started with a clear mission: to help homeowners in <span class="font-semibold text-brand-navy">[Location, State]</span> fix, improve, and add value to their properties without stress. Today, we manage residential remodeling projects across the region, focusing on code compliance, structural integrity, and clean workmanship.
-                    </p>
-                    
-                    <p class="text-slate-600 leading-relaxed">
-                        We know that regional homes have distinct character — but also unique issues behind the walls (tight wiring, aging plumbing, and uneven subflooring). As a <strong>Fully Licensed & Insured General Contractor</strong>, we coordinate permits, structure the project logically, and run clean, safe job sites.
-                    </p>
-                    
-                    <!-- Founder Widget -->
-                    <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 max-w-md">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&h=120&q=80" alt="[Founder Name]" class="w-14 h-14 rounded-full object-cover shadow border-2 border-brand-accent">
-                        <div class="flex flex-col">
-                            <span class="font-bold text-brand-navy text-base">[Founder Name]</span>
-                            <span class="text-xs text-brand-lightslate uppercase tracking-wider font-semibold">Founder & Owner</span>
+                    <!-- Left Image Column with multi-photo look -->
+                    <div class="lg:col-span-6 relative">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-100 aspect-[4/3] group border-4 border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Bright and spacious residential interior remodel highlighting craftsmanship" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-brand-navy/10"></div>
                         </div>
-                        <div class="ml-auto pr-2">
-                            <!-- SVG signature placeholder -->
-                            <i class="fa-solid fa-signature text-slate-300 text-3xl"></i>
+                        
+                        <!-- Small Overlap Image -->
+                        <div class="absolute -bottom-10 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-square hidden sm:block bg-slate-200">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=400&q=80" alt="Contractor worker handling wood materials during house construction" loading="lazy" class="w-full h-full object-cover">
                         </div>
                     </div>
                     
-                    <!-- CTA -->
-                    <div class="pt-2">
-                        <a href="#contact" class="inline-block bg-brand-navy hover:bg-brand-accent text-white hover:text-brand-navy px-8 py-3.5 rounded-xl font-bold tracking-wide transition-all duration-200">
-                            SCHEDULE A FREE ESTIMATE
-                        </a>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES SECTION (Grid with interactive modals) -->
-    <section id="services" class="py-20 bg-brand-cream border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <div class="flex items-center justify-center gap-2 text-brand-accent">
-                    <span class="h-0.5 w-8 bg-brand-accent"></span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">WHAT WE DO</span>
-                    <span class="h-0.5 w-8 bg-brand-accent"></span>
-                </div>
-                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy uppercase tracking-tight leading-tight">
-                    EXCEPTIONAL REMODELING SERVICES WE OFFER
-                </h2>
-                <p class="text-slate-600">
-                    From complete interior layout redesigns to outdoor composite decks, we provide full structural management, permits, and professional installations.
-                </p>
-            </div>
-            
-            <!-- Services Grid (5 elements) -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Service 1: Home Remodeling -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 transition-all duration-300 hover:shadow-cardhover hover:-translate-y-1.5 flex flex-col group">
-                    <div class="relative h-56 overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Whole Home Remodeling" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">01</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Whole-Home Remodeling</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
-                                Closed-off rooms and awkward layouts? We transform home spaces into bright, open interiors. From custom layouts and drywall repairs to full renovations, we organize the planning and sequence correctly.
-                            </p>
-                        </div>
-                        <button onclick="openServiceModal(0)" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
-                            <span>Read Full Details</span>
-                            <i class="fa-solid fa-arrow-right transition-transform duration-200 group-hover:translate-x-1.5"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Service 2: Kitchen Remodeling -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 transition-all duration-300 hover:shadow-cardhover hover:-translate-y-1.5 flex flex-col group">
-                    <div class="relative h-56 overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Kitchen Remodeling" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">02</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Kitchen Remodeling</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
-                                The kitchen is the heart of your home. If yours feels cramped or outdated, we redesign it for real functionality. Custom island installations, quartz countertops, modern storage systems, and code-compliant plumbing.
-                            </p>
-                        </div>
-                        <button onclick="openServiceModal(1)" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
-                            <span>Read Full Details</span>
-                            <i class="fa-solid fa-arrow-right transition-transform duration-200 group-hover:translate-x-1.5"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Service 3: Bathroom Remodeling -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 transition-all duration-305 hover:shadow-cardhover hover:-translate-y-1.5 flex flex-col group">
-                    <div class="relative h-56 overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1620626011761-996317b6979a?auto=format&fit=crop&w=600&q=80" alt="Bathroom Remodeling" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">03</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Bathroom Remodeling</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
-                                Bathrooms fail quietly through mold and slow leaks. We construct safe, moisture-resistant master suites, tile walk-in showers, tub-to-shower conversions, and premium ventilation integrations.
-                            </p>
-                        </div>
-                        <button onclick="openServiceModal(2)" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
-                            <span>Read Full Details</span>
-                            <i class="fa-solid fa-arrow-right transition-transform duration-200 group-hover:translate-x-1.5"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Service 4: General Contracting -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 transition-all duration-300 hover:shadow-cardhover hover:-translate-y-1.5 flex flex-col group">
-                    <div class="relative h-56 overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="General Contracting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">04</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">General Contractor</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
-                                Managing complex structures? We handle structural additions, framing, structural calculations, permits, electrical layouts, plumbing systems, and final inspections. One point of contact for the whole build.
-                            </p>
-                        </div>
-                        <button onclick="openServiceModal(3)" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
-                            <span>Read Full Details</span>
-                            <i class="fa-solid fa-arrow-right transition-transform duration-200 group-hover:translate-x-1.5"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Service 5: Deck Builder -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 transition-all duration-300 hover:shadow-cardhover hover:-translate-y-1.5 flex flex-col group">
-                    <div class="relative h-56 overflow-hidden bg-slate-900">
-                        <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=600&q=80" alt="Deck Builder" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">05</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between">
-                        <div class="space-y-3">
-                            <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Decks & Porches</h3>
-                            <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
-                                Rotting frames or bouncy deck structures present safety hazards. We design and build weather-resistant wood and composite decks, porches, privacy fences, and patios built to endure regional elements.
-                            </p>
-                        </div>
-                        <button onclick="openServiceModal(4)" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
-                            <span>Read Full Details</span>
-                            <i class="fa-solid fa-arrow-right transition-transform duration-200 group-hover:translate-x-1.5"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- CTA Card to complete 3x2 grid nicely -->
-                <div class="bg-gradient-to-br from-brand-navy to-slate-900 rounded-2xl overflow-hidden shadow-premium p-8 flex flex-col justify-between text-white border border-slate-800">
-                    <div class="space-y-4">
-                        <div class="w-12 h-12 bg-white/5 border border-white/10 text-brand-accent rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-clipboard-question text-xl"></i>
-                        </div>
-                        <h3 class="font-heading font-extrabold text-xl uppercase tracking-tight">Need a Custom Layout Plan?</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Have minor repairs, attics, structural extensions or garage conversions in mind? Reach out to schedule a property walkthrough and customized quote.
-                        </p>
-                    </div>
-                    <a href="#contact" class="mt-8 bg-brand-accent hover:bg-brand-accentHover text-brand-navy text-center py-3.5 rounded-xl font-bold transition duration-200 uppercase tracking-wide text-sm">
-                        Schedule Property Walkthrough
-                    </a>
-                </div>
-                
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- UNIQUE BENEFITS / WHY CHOOSE US SECTION (Slider Layout) -->
-    <section id="benefits" class="py-20 bg-slate-900 text-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Section Title -->
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <div class="flex items-center justify-center gap-2 text-brand-accent">
-                    <span class="h-0.5 w-8 bg-brand-accent"></span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">THE CONTRACTOR DIFFERENCE</span>
-                    <span class="h-0.5 w-8 bg-brand-accent"></span>
-                </div>
-                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl uppercase tracking-tight leading-tight">
-                    OUR UNIQUE BENEFITS
-                </h2>
-                <p class="text-slate-400">
-                    Why local homeowners trust us to step inside their properties and manage key renovations.
-                </p>
-            </div>
-            
-            <!-- Dynamic Benefit Slider block -->
-            <div class="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-10 lg:p-12 relative shadow-2xl">
-                <!-- Nav Tabs for slider -->
-                <div class="flex flex-wrap gap-2 md:justify-center border-b border-white/10 pb-6 mb-8 overflow-x-auto">
-                    <button onclick="showBenefit(0)" class="benefit-tab px-4 py-2 rounded-lg text-sm font-semibold text-slate-405 hover:text-white transition duration-200 bg-white/5 border border-white/5 active-tab" id="tab-0">
-                        Craftsmanship
-                    </button>
-                    <button onclick="showBenefit(1)" class="benefit-tab px-4 py-2 rounded-lg text-sm font-semibold text-slate-405 hover:text-white transition duration-200 bg-transparent border border-transparent" id="tab-1">
-                        Communication
-                    </button>
-                    <button onclick="showBenefit(2)" class="benefit-tab px-4 py-2 rounded-lg text-sm font-semibold text-slate-405 hover:text-white transition duration-200 bg-transparent border border-transparent" id="tab-2">
-                        Custom Solutions
-                    </button>
-                    <button onclick="showBenefit(3)" class="benefit-tab px-4 py-2 rounded-lg text-sm font-semibold text-slate-405 hover:text-white transition duration-200 bg-transparent border border-transparent" id="tab-3">
-                        Local Experience
-                    </button>
-                    <button onclick="showBenefit(4)" class="benefit-tab px-4 py-2 rounded-lg text-sm font-semibold text-slate-405 hover:text-white transition duration-200 bg-transparent border border-transparent" id="tab-4">
-                        Full-Service Team
-                    </button>
-                </div>
-                
-                <!-- Benefit Content Slides -->
-                <div class="relative overflow-hidden min-h-[300px]">
-                    
-                    <!-- Slide 0: Craftsmanship -->
-                    <div class="benefit-slide transition-opacity duration-300 flex flex-col lg:flex-row gap-8 items-center" id="slide-0">
-                        <div class="lg:w-3/5 space-y-5">
-                            <h3 class="font-heading font-extrabold text-2xl text-brand-accent uppercase">Award-Winning Craftsmanship</h3>
-                            <p class="text-slate-300 leading-relaxed">
-                                Our team has spent years remodeling homes. Homeowners contact us because they expect clean work sites, safe construction, structural compliance, and details executed the right way. We treat every home with the respect it deserves.
-                            </p>
-                            <ul class="space-y-2 text-sm text-slate-300">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Dust mitigation and protective floor coverings on every site.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Strict compliance with local construction and residential safety codes.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Double-checked waterproofing systems in all shower expansions.</li>
-                            </ul>
-                        </div>
-                        <div class="lg:w-2/5 flex justify-center">
-                            <i class="fa-solid fa-award text-[120px] text-brand-accent/20 animate-float"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 1: Communication -->
-                    <div class="benefit-slide hidden transition-opacity duration-300 flex flex-col lg:flex-row gap-8 items-center" id="slide-1">
-                        <div class="lg:w-3/5 space-y-5">
-                            <h3 class="font-heading font-extrabold text-2xl text-brand-accent uppercase">Transparent Communication</h3>
-                            <p class="text-slate-300 leading-relaxed">
-                                Most homeowners simply want a contractor who explains issues clearly. We walk you through every critical step: timelines, design selections, structural permits, material availability, and structural adjustments.
-                            </p>
-                            <ul class="space-y-2 text-sm text-slate-300">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Fully itemized pricing schedules — no surprise charges.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Regular progress messages directly from your supervisor.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Fast, responsive answers to structural questions.</li>
-                            </ul>
-                        </div>
-                        <div class="lg:w-2/5 flex justify-center">
-                            <i class="fa-solid fa-comments text-[120px] text-brand-accent/20"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 2: Custom Solutions -->
-                    <div class="benefit-slide hidden transition-opacity duration-300 flex flex-col lg:flex-row gap-8 items-center" id="slide-2">
-                        <div class="lg:w-3/5 space-y-5">
-                            <h3 class="font-heading font-extrabold text-2xl text-brand-accent uppercase">Custom Layout Solutions</h3>
-                            <p class="text-slate-300 leading-relaxed">
-                                Every residential property is built differently. Some require custom load-bearing support beams, while others need specific space-saving bathroom designs. We develop customized layout designs to fit your home's unique dimensions.
-                            </p>
-                            <ul class="space-y-2 text-sm text-slate-300">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Personalized drafting and framing configurations.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Material integrations tailored to your aesthetic choices.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Maximized utility layouts for older residential framing.</li>
-                            </ul>
-                        </div>
-                        <div class="lg:w-2/5 flex justify-center">
-                            <i class="fa-solid fa-compass-drafting text-[120px] text-brand-accent/20"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 3: Local Experience -->
-                    <div class="benefit-slide hidden transition-opacity duration-300 flex flex-col lg:flex-row gap-8 items-center" id="slide-3">
-                        <div class="lg:w-3/5 space-y-5">
-                            <h3 class="font-heading font-extrabold text-2xl text-brand-accent uppercase">Local Knowledge You Can Trust</h3>
-                            <p class="text-slate-300 leading-relaxed">
-                                Homes in regional neighborhoods like [Location, State] present familiar structural properties. Having renovated extensively in local areas, we anticipate issues with older framing, tight crawlspaces, and regional permitting.
-                            </p>
-                            <ul class="space-y-2 text-sm text-slate-300">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Familiarity with municipal code expectations.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Efficient permit processing using established contacts.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Professional references from your nearby community.</li>
-                            </ul>
-                        </div>
-                        <div class="lg:w-2/5 flex justify-center">
-                            <i class="fa-solid fa-map-location-dot text-[120px] text-brand-accent/20"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 4: Full-Service Team -->
-                    <div class="benefit-slide hidden transition-opacity duration-300 flex flex-col lg:flex-row gap-8 items-center" id="slide-4">
-                        <div class="lg:w-3/5 space-y-5">
-                            <h3 class="font-heading font-extrabold text-2xl text-brand-accent uppercase">Full-Service Management</h3>
-                            <p class="text-slate-300 leading-relaxed">
-                                Because we operate as an experienced home remodeler, bathroom builder, and general contractor, you avoid coordinating separate trades. We manage the design, structural calculations, framing, utilities, and final finishing.
-                            </p>
-                            <ul class="space-y-2 text-sm text-slate-300">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Complete structural project sequencing.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Direct management of electrical and plumbing services.</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent"></i> Streamlined structural transformations.</li>
-                            </ul>
-                        </div>
-                        <div class="lg:w-2/5 flex justify-center">
-                            <i class="fa-solid fa-people-group text-[120px] text-brand-accent/20"></i>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <!-- Slide Control arrows -->
-                <div class="flex justify-end gap-3 mt-8">
-                    <button onclick="prevBenefit()" class="w-10 h-10 bg-white/5 border border-white/10 hover:border-brand-accent hover:bg-brand-accent text-white hover:text-brand-navy rounded-full flex items-center justify-center transition duration-200">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-                    <button onclick="nextBenefit()" class="w-10 h-10 bg-white/5 border border-white/10 hover:border-brand-accent hover:bg-brand-accent text-white hover:text-brand-navy rounded-full flex items-center justify-center transition duration-200">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS SECTION (Social proof, 3 Cards) -->
-    <section id="testimonials" class="py-20 bg-brand-cream border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Section Title -->
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <div class="flex items-center justify-center gap-2 text-brand-accent">
-                    <span class="h-0.5 w-8 bg-brand-accent"></span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">REVIEWS</span>
-                    <span class="h-0.5 w-8 bg-brand-accent"></span>
-                </div>
-                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy uppercase tracking-tight leading-tight">
-                    WHAT NEIGHBORS SAY ABOUT OUR REMODELING WORK
-                </h2>
-                <p class="text-slate-600">
-                    Verified feedback from home renovation projects in [Location, State] and surrounding areas.
-                </p>
-            </div>
-            
-            <!-- Review Cards Grid -->
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- Review 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-premium border border-slate-100 flex flex-col justify-between relative transition duration-300 hover:shadow-cardhover">
-                    <!-- Google reviews quote icon -->
-                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-brand-accent text-brand-navy rounded-full flex items-center justify-center shadow font-bold text-lg">
-                        "
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <!-- Rating Stars -->
-                        <div class="flex text-brand-accent text-sm gap-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-600 text-sm leading-relaxed italic">
-                            "The team was extremely professional and friendly. They answered all of our questions, understood the detailed scope of our kitchen and bath remodel, and provided a comprehensive estimate. The support during construction was excellent. All of the projects came out looking great!"
-                        </p>
-                    </div>
-                    
-                    <div class="flex items-center gap-3 pt-6 border-t border-slate-100 mt-6">
-                        <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-brand-navy font-bold text-sm">
-                            EI
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="font-bold text-sm text-brand-navy">Erik Irani</span>
-                            <span class="text-[10px] text-brand-lightslate uppercase font-bold flex items-center gap-1">
-                                <i class="fa-brands fa-google text-brand-accent"></i> Verified Homeowner
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Review 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-premium border border-slate-100 flex flex-col justify-between relative transition duration-300 hover:shadow-cardhover">
-                    <!-- Google reviews quote icon -->
-                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-brand-accent text-brand-navy rounded-full flex items-center justify-center shadow font-bold text-lg">
-                        "
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <!-- Rating Stars -->
-                        <div class="flex text-brand-accent text-sm gap-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-600 text-sm leading-relaxed italic">
-                            "We had a great experience with our finished attic space renovation. They installed drywall, trim, custom shelving, and did painting. It's an older house with past DIY changes, and they problem-solved beautifully. Finished on time and within budget. Made a huge difference!"
-                        </p>
-                    </div>
-                    
-                    <div class="flex items-center gap-3 pt-6 border-t border-slate-100 mt-6">
-                        <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-brand-navy font-bold text-sm">
-                            MG
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="font-bold text-sm text-brand-navy">Margaret Guryan</span>
-                            <span class="text-[10px] text-brand-lightslate uppercase font-bold flex items-center gap-1">
-                                <i class="fa-brands fa-google text-brand-accent"></i> Verified Homeowner
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Review 3 -->
-                <div class="bg-white rounded-2xl p-8 shadow-premium border border-slate-100 flex flex-col justify-between relative transition duration-305 hover:shadow-cardhover">
-                    <!-- Google reviews quote icon -->
-                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-brand-accent text-brand-navy rounded-full flex items-center justify-center shadow font-bold text-lg">
-                        "
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <!-- Rating Stars -->
-                        <div class="flex text-brand-accent text-sm gap-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-600 text-sm leading-relaxed italic">
-                            "Excellent company from leadership to on-site crews! They are extremely professional, knowledgeable, and thorough, with a wide range of remodeling expertise. Consistent communication meant our project started and finished on time. We can't recommend them highly enough!"
-                        </p>
-                    </div>
-                    
-                    <div class="flex items-center gap-3 pt-6 border-t border-slate-100 mt-6">
-                        <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-brand-navy font-bold text-sm">
-                            KK
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="font-bold text-sm text-brand-navy">Kristi Kuhn</span>
-                            <span class="text-[10px] text-brand-lightslate uppercase font-bold flex items-center gap-1">
-                                <i class="fa-brands fa-google text-brand-accent"></i> Verified Homeowner
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <!-- Google Review Aggregate Badge -->
-            <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left bg-slate-50 border border-slate-200/60 p-4 rounded-2xl max-w-lg mx-auto shadow-sm">
-                <div class="flex text-brand-accent text-xl gap-1">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <div class="text-sm text-slate-600">
-                    <span class="font-bold text-brand-navy">5.0 / 5.0 Rating</span> based on reviews from local homeowners in [Location, State].
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- CONTACT & LEAD CAPTURE SECTION (Conversion central) -->
-    <section id="contact" class="py-20 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                
-                <!-- Left info column -->
-                <div class="lg:col-span-5 space-y-8">
-                    <div class="space-y-4">
+                    <!-- Right Text Column -->
+                    <div class="lg:col-span-6 flex flex-col space-y-6">
                         <div class="flex items-center gap-2 text-brand-accent">
                             <span class="h-0.5 w-8 bg-brand-accent"></span>
-                            <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">CONTACT US</span>
+                            <span class="text-xs font-bold uppercase tracking-widest">ABOUT [COMPANY NAME]</span>
                         </div>
+                        
                         <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy uppercase tracking-tight leading-tight">
-                            GET A FREE PROPERTY WALKTHROUGH ESTIMATE
+                            TRUSTED REMODELING WITH A REPUTATION FOR EXCELLENCE
                         </h2>
-                        <p class="text-slate-600">
-                            Planning a remodeling project? Tell us about your goals, and we'll schedule a detailed walkthrough to provide a comprehensive, transparent cost estimate.
+                        
+                        <p class="text-slate-600 leading-relaxed">
+                            Our remodeling business started with a clear mission: to help homeowners in <span class="font-semibold text-brand-navy">[Location, State]</span> fix, improve, and add value to their properties without stress. Today, we manage residential remodeling projects across the region, focusing on code compliance, structural integrity, and clean workmanship.
                         </p>
-                    </div>
-                    
-                    <!-- Contacts list -->
-                    <div class="space-y-4 text-slate-600">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brand-navy border border-slate-200/50 mt-1 flex-shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="font-bold text-brand-navy text-sm">Office Location</span>
-                                <span class="text-sm">[Street Address, City, State, ZIP]</span>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brand-navy border border-slate-200/50 mt-1 flex-shrink-0">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="font-bold text-brand-navy text-sm">Direct Phone</span>
-                                <a href="tel:[Phone Number]" class="text-sm text-slate-600 hover:text-brand-accent transition duration-150">[Phone Number]</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brand-navy border border-slate-200/50 mt-1 flex-shrink-0">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="font-bold text-brand-navy text-sm">Email Address</span>
-                                <a href="mailto:[Email Address]" class="text-sm text-slate-600 hover:text-brand-accent transition duration-150">[Email Address]</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Licenses list -->
-                    <div class="bg-slate-50 border border-slate-200/60 rounded-2xl p-6 space-y-3">
-                        <h4 class="font-heading font-bold text-sm text-brand-navy uppercase tracking-wider">STATE REGISTRATIONS</h4>
-                        <div class="grid grid-cols-2 gap-2 text-xs font-mono text-slate-500">
-                            <div>MD License: <span class="font-bold text-brand-navy">[MHIC Number]</span></div>
-                            <div>VA License: <span class="font-bold text-brand-navy">[VA Number]</span></div>
-                            <div>DC License: <span class="font-bold text-brand-navy">[DC Number]</span></div>
-                        </div>
-                    </div>
-                    
-                    <!-- List of serving areas -->
-                    <div class="space-y-3">
-                        <h4 class="font-heading font-bold text-sm text-brand-navy uppercase tracking-wider">PROUDLY SERVING:</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed font-semibold uppercase">
-                            [Location 1] • [Location 2] • [Location 3] • [Location 4] • [Location 5] • [Location 6] • [Location 7] & surrounding areas.
+                        
+                        <p class="text-slate-600 leading-relaxed">
+                            We know that regional homes have distinct character — but also unique issues behind the walls (tight wiring, aging plumbing, and uneven subflooring). As a <strong>Fully Licensed & Insured General Contractor</strong>, we coordinate permits, structure the project logically, and run clean, safe job sites.
                         </p>
+                        
+                        <!-- Founder Widget -->
+                        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 max-w-md">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&h=120&q=80" alt="[Founder Name] - Owner of [Company Name]" loading="lazy" class="w-14 h-14 rounded-full object-cover shadow border-2 border-brand-accent">
+                            <div class="flex flex-col">
+                                <span class="font-bold text-brand-navy text-base">[Founder Name]</span>
+                                <span class="text-xs text-brand-lightslate uppercase tracking-wider font-semibold">Founder & Owner</span>
+                            </div>
+                            <div class="ml-auto pr-2">
+                                <i class="fa-solid fa-signature text-slate-300 text-3xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA -->
+                        <div class="pt-2">
+                            <a href="#contact" aria-label="Book a free consultation" class="inline-block bg-brand-navy hover:bg-brand-accent text-white hover:text-brand-navy px-8 py-3.5 rounded-xl font-bold tracking-wide transition-all duration-200">
+                                SCHEDULE A FREE ESTIMATE
+                            </a>
+                        </div>
                     </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION (Grid with interactive modals) -->
+        <section id="services" class="py-20 bg-brand-cream border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="flex items-center justify-center gap-2 text-brand-accent">
+                        <span class="h-0.5 w-8 bg-brand-accent"></span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">WHAT WE DO</span>
+                        <span class="h-0.5 w-8 bg-brand-accent"></span>
+                    </div>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy uppercase tracking-tight leading-tight">
+                        EXCEPTIONAL REMODELING SERVICES WE OFFER
+                    </h2>
+                    <p class="text-slate-600">
+                        From complete interior layout redesigns to outdoor composite decks, we provide full structural management, permits, and professional installations.
+                    </p>
                 </div>
                 
-                <!-- Right Form column -->
-                <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-100 relative">
-                    <!-- Glassmorphism overlay when loading / success -->
-                    <div id="form-overlay" class="absolute inset-0 bg-white/95 backdrop-blur-sm rounded-3xl flex flex-col items-center justify-center p-8 text-center opacity-0 pointer-events-none transition-all duration-300 z-10">
-                        <div id="overlay-loader" class="space-y-4">
-                            <div class="inline-block w-12 h-12 border-4 border-slate-200 border-t-brand-accent rounded-full animate-spin"></div>
-                            <p class="text-brand-navy font-bold">Submitting estimate request...</p>
+                <!-- Services Grid (5 elements) -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Service 1: Home Remodeling -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 transition-all duration-300 hover:shadow-cardhover hover:-translate-y-1.5 flex flex-col group">
+                        <div class="relative h-56 overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Beautiful living room remodeling work showcasing custom features" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">01</span>
                         </div>
-                        <div id="overlay-success" class="space-y-6 hidden">
-                            <div class="w-20 h-20 bg-brand-accentLight border border-brand-accent/20 text-brand-accent rounded-full flex items-center justify-center mx-auto text-4xl pulse-gold-ring">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <div class="space-y-2">
-                                <h3 class="font-heading font-extrabold text-2xl text-brand-navy uppercase">Thank You!</h3>
-                                <p class="text-slate-600 max-w-md mx-auto">
-                                    Your estimate request has been received. Our team will review the details and contact you within 24 hours to schedule a property walkthrough.
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Whole-Home Remodeling</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                                    Closed-off rooms and awkward layouts? We transform home spaces into bright, open interiors. From custom layouts and drywall repairs to full renovations, we organize the planning and sequence correctly.
                                 </p>
                             </div>
-                            <button onclick="resetEstimateForm()" class="bg-brand-navy text-white px-6 py-2.5 rounded-lg font-semibold text-sm">
-                                Back to Form
+                            <button onclick="openServiceModal(0)" aria-label="View whole home remodeling service details" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
+                                <span>Read Full Details</span>
+                                <i class="fa-solid fa-arrow-right transition-transform duration-200 group-hover:translate-x-1.5" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
                     
-                    <form id="estimate-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <!-- First Name -->
-                            <div class="space-y-1.5">
-                                <label for="form-first-name" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">First Name <span class="text-brand-accent">*</span></label>
-                                <input type="text" id="form-first-name" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-accent focus:bg-white focus:outline-none transition duration-150 text-sm">
+                    <!-- Service 2: Kitchen Remodeling -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 transition-all duration-300 hover:shadow-cardhover hover:-translate-y-1.5 flex flex-col group">
+                        <div class="relative h-56 overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Modern kitchen with wooden island and quartz counters" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">02</span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Kitchen Remodeling</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                                    The kitchen is the heart of your home. If yours feels cramped or outdated, we redesign it for real functionality. Custom island installations, quartz countertops, modern storage systems, and code-compliant plumbing.
+                                </p>
                             </div>
-                            <!-- Last Name -->
-                            <div class="space-y-1.5">
-                                <label for="form-last-name" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Last Name <span class="text-brand-accent">*</span></label>
-                                <input type="text" id="form-last-name" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-accent focus:bg-white focus:outline-none transition duration-150 text-sm">
+                            <button onclick="openServiceModal(1)" aria-label="View kitchen remodeling service details" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
+                                <span>Read Full Details</span>
+                                <i class="fa-solid fa-arrow-right transition-transform duration-200 group-hover:translate-x-1.5" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3: Bathroom Remodeling -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 transition-all duration-300 hover:shadow-cardhover hover:-translate-y-1.5 flex flex-col group">
+                        <div class="relative h-56 overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1620626011761-996317b6979a?auto=format&fit=crop&w=600&q=80" alt="Luxury tiled master bathroom walk in shower remodel" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">03</span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Bathroom Remodeling</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                                    Bathrooms fail quietly through mold and slow leaks. We construct safe, moisture-resistant master suites, tile walk-in showers, tub-to-shower conversions, and premium ventilation integrations.
+                                </p>
                             </div>
+                            <button onclick="openServiceModal(2)" aria-label="View bathroom remodeling service details" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
+                                <span>Read Full Details</span>
+                                <i class="fa-solid fa-arrow-right transition-transform duration-200 group-hover:translate-x-1.5" aria-hidden="true"></i>
+                            </button>
                         </div>
-                        
-                        <!-- Street Address -->
-                        <div class="space-y-1.5">
-                            <label for="form-address" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Street Address <span class="text-brand-accent">*</span></label>
-                            <input type="text" id="form-address" required placeholder="e.g. 123 Main St, [City, State]" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-accent focus:bg-white focus:outline-none transition duration-150 text-sm">
+                    </div>
+                    
+                    <!-- Service 4: General Contracting -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 transition-all duration-300 hover:shadow-cardhover hover:-translate-y-1.5 flex flex-col group">
+                        <div class="relative h-56 overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="House framing and structural construction managed by general contractor" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">04</span>
                         </div>
-                        
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <!-- Phone -->
-                            <div class="space-y-1.5">
-                                <label for="form-phone" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Phone Number <span class="text-brand-accent">*</span></label>
-                                <input type="tel" id="form-phone" required placeholder="e.g. (123) 456-7890" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-accent focus:bg-white focus:outline-none transition duration-150 text-sm">
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">General Contractor</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                                    Managing complex structures? We handle structural additions, framing, structural calculations, permits, electrical layouts, plumbing systems, and final inspections. One point of contact for the whole build.
+                                </p>
                             </div>
-                            <!-- Email -->
-                            <div class="space-y-1.5">
-                                <label for="form-email" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Email Address <span class="text-brand-accent">*</span></label>
-                                <input type="email" id="form-email" required placeholder="name@domain.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-accent focus:bg-white focus:outline-none transition duration-150 text-sm">
+                            <button onclick="openServiceModal(3)" aria-label="View general contractor service details" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
+                                <span>Read Full Details</span>
+                                <i class="fa-solid fa-arrow-right transition-transform duration-200 group-hover:translate-x-1.5" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 5: Deck Builder -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 transition-all duration-300 hover:shadow-cardhover hover:-translate-y-1.5 flex flex-col group">
+                        <div class="relative h-56 overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=600&q=80" alt="Custom wooden deck construction under construction" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">05</span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Decks & Porches</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                                    Rotting frames or bouncy deck structures present safety hazards. We design and build weather-resistant wood and composite decks, porches, privacy fences, and patios built to endure regional elements.
+                                </p>
                             </div>
+                            <button onclick="openServiceModal(4)" aria-label="View deck builder service details" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
+                                <span>Read Full Details</span>
+                                <i class="fa-solid fa-arrow-right transition-transform duration-200 group-hover:translate-x-1.5" aria-hidden="true"></i>
+                            </button>
                         </div>
-                        
-                        <!-- Service Needed Dropdown -->
-                        <div class="space-y-1.5">
-                            <label for="form-service" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Service Required <span class="text-brand-accent">*</span></label>
-                            <select id="form-service" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-accent focus:bg-white focus:outline-none transition duration-150 text-sm">
-                                <option value="" disabled selected>Select a service...</option>
-                                <option value="Kitchen Remodeling">Kitchen Remodeling</option>
-                                <option value="Bathroom Remodeling">Bathroom Remodeling</option>
-                                <option value="Whole-Home Remodeling">Whole-Home Remodeling</option>
-                                <option value="Decks & Porches">Decks & Porches</option>
-                                <option value="General Contracting / Additions">General Contracting / Additions</option>
-                                <option value="Other">Other Remodeling Project</option>
-                            </select>
+                    </div>
+                    
+                    <!-- CTA Card to complete 3x2 grid nicely -->
+                    <div class="bg-gradient-to-br from-brand-navy to-slate-900 rounded-2xl overflow-hidden shadow-premium p-8 flex flex-col justify-between text-white border border-slate-800">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 bg-white/5 border border-white/10 text-brand-accent rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-clipboard-question text-xl" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="font-heading font-extrabold text-xl uppercase tracking-tight">Need a Custom Layout Plan?</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Have minor repairs, attics, structural extensions or garage conversions in mind? Reach out to schedule a property walkthrough and customized quote.
+                            </p>
                         </div>
-                        
-                        <!-- Project Details -->
-                        <div class="space-y-1.5">
-                            <label for="form-details" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Describe Your Project <span class="text-brand-accent">*</span></label>
-                            <textarea id="form-details" required rows="4" placeholder="Briefly describe your goals, dimensions, approximate budget or materials desired..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-accent focus:bg-white focus:outline-none transition duration-150 text-sm"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-brand-navy text-white hover:bg-brand-accent hover:text-brand-navy font-bold py-4 rounded-xl shadow-premium border-2 border-brand-navy hover:border-brand-accent transition duration-200 uppercase tracking-wider text-sm flex items-center justify-center gap-2">
-                            <span>Submit Estimate Request</span> <i class="fa-solid fa-paper-plane text-xs"></i>
-                        </button>
-                    </form>
+                        <a href="#contact" aria-label="Contact us to schedule a property walkthrough" class="mt-8 bg-brand-accent hover:bg-brand-accentHover text-brand-navy text-center py-3.5 rounded-xl font-bold transition duration-200 uppercase tracking-wide text-sm">
+                            Schedule Walkthrough
+                        </a>
+                    </div>
+                    
                 </div>
                 
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- UNIQUE BENEFITS / WHY CHOOSE US SECTION (Slider Layout) -->
+        <section id="benefits" class="py-20 bg-slate-900 text-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Title -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="flex items-center justify-center gap-2 text-brand-accent">
+                        <span class="h-0.5 w-8 bg-brand-accent"></span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">THE CONTRACTOR DIFFERENCE</span>
+                        <span class="h-0.5 w-8 bg-brand-accent"></span>
+                    </div>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl uppercase tracking-tight leading-tight">
+                        OUR UNIQUE BENEFITS
+                    </h2>
+                    <p class="text-slate-400">
+                        Why local homeowners trust us to step inside their properties and manage key renovations.
+                    </p>
+                </div>
+                
+                <!-- Dynamic Benefit Slider block -->
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-10 lg:p-12 relative shadow-2xl">
+                    <!-- Nav Tabs for slider -->
+                    <div class="flex flex-wrap gap-2 md:justify-center border-b border-white/10 pb-6 mb-8 overflow-x-auto" role="tablist" aria-label="Benefits tabs">
+                        <button onclick="showBenefit(0)" role="tab" aria-selected="true" aria-controls="slide-0" class="benefit-tab px-4 py-2 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition duration-200 bg-white/5 border border-white/5 active-tab" id="tab-0">
+                            Craftsmanship
+                        </button>
+                        <button onclick="showBenefit(1)" role="tab" aria-selected="false" aria-controls="slide-1" class="benefit-tab px-4 py-2 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition duration-200 bg-transparent border border-transparent" id="tab-1">
+                            Communication
+                        </button>
+                        <button onclick="showBenefit(2)" role="tab" aria-selected="false" aria-controls="slide-2" class="benefit-tab px-4 py-2 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition duration-200 bg-transparent border border-transparent" id="tab-2">
+                            Custom Solutions
+                        </button>
+                        <button onclick="showBenefit(3)" role="tab" aria-selected="false" aria-controls="slide-3" class="benefit-tab px-4 py-2 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition duration-200 bg-transparent border border-transparent" id="tab-3">
+                            Local Experience
+                        </button>
+                        <button onclick="showBenefit(4)" role="tab" aria-selected="false" aria-controls="slide-4" class="benefit-tab px-4 py-2 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition duration-200 bg-transparent border border-transparent" id="tab-4">
+                            Full-Service Team
+                        </button>
+                    </div>
+                    
+                    <!-- Benefit Content Slides -->
+                    <div class="relative overflow-hidden min-h-[300px]">
+                        
+                        <!-- Slide 0: Craftsmanship -->
+                        <div class="benefit-slide transition-opacity duration-300 flex flex-col lg:flex-row gap-8 items-center" id="slide-0" role="tabpanel" aria-labelledby="tab-0">
+                            <div class="lg:w-3/5 space-y-5">
+                                <h3 class="font-heading font-extrabold text-2xl text-brand-accent uppercase">Award-Winning Craftsmanship</h3>
+                                <p class="text-slate-300 leading-relaxed">
+                                    Our team has spent years remodeling homes. Homeowners contact us because they expect clean work sites, safe construction, structural compliance, and details executed the right way. We treat every home with the respect it deserves.
+                                </p>
+                                <ul class="space-y-2 text-sm text-slate-300">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Dust mitigation and protective floor coverings on every site.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Strict compliance with local construction and residential safety codes.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Double-checked waterproofing systems in all shower expansions.</li>
+                                </ul>
+                            </div>
+                            <div class="lg:w-2/5 flex justify-center">
+                                <i class="fa-solid fa-award text-[120px] text-brand-accent/20 animate-float" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 1: Communication -->
+                        <div class="benefit-slide hidden transition-opacity duration-300 flex flex-col lg:flex-row gap-8 items-center" id="slide-1" role="tabpanel" aria-labelledby="tab-1">
+                            <div class="lg:w-3/5 space-y-5">
+                                <h3 class="font-heading font-extrabold text-2xl text-brand-accent uppercase">Transparent Communication</h3>
+                                <p class="text-slate-300 leading-relaxed">
+                                    Most homeowners simply want a contractor who explains issues clearly. We walk you through every critical step: timelines, design selections, structural permits, material availability, and structural adjustments.
+                                </p>
+                                <ul class="space-y-2 text-sm text-slate-300">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Fully itemized pricing schedules — no surprise charges.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Regular progress messages directly from your supervisor.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Fast, responsive answers to structural questions.</li>
+                                </ul>
+                            </div>
+                            <div class="lg:w-2/5 flex justify-center">
+                                <i class="fa-solid fa-comments text-[120px] text-brand-accent/20" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2: Custom Solutions -->
+                        <div class="benefit-slide hidden transition-opacity duration-300 flex flex-col lg:flex-row gap-8 items-center" id="slide-2" role="tabpanel" aria-labelledby="tab-2">
+                            <div class="lg:w-3/5 space-y-5">
+                                <h3 class="font-heading font-extrabold text-2xl text-brand-accent uppercase">Custom Layout Solutions</h3>
+                                <p class="text-slate-300 leading-relaxed">
+                                    Every residential property is built differently. Some require custom load-bearing support beams, while others need specific space-saving bathroom designs. We develop customized layout designs to fit your home's unique dimensions.
+                                </p>
+                                <ul class="space-y-2 text-sm text-slate-300">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Personalized drafting and framing configurations.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Material integrations tailored to your aesthetic choices.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Maximized utility layouts for older residential framing.</li>
+                                </ul>
+                            </div>
+                            <div class="lg:w-2/5 flex justify-center">
+                                <i class="fa-solid fa-compass-drafting text-[120px] text-brand-accent/20" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3: Local Experience -->
+                        <div class="benefit-slide hidden transition-opacity duration-300 flex flex-col lg:flex-row gap-8 items-center" id="slide-3" role="tabpanel" aria-labelledby="tab-3">
+                            <div class="lg:w-3/5 space-y-5">
+                                <h3 class="font-heading font-extrabold text-2xl text-brand-accent uppercase">Local Knowledge You Can Trust</h3>
+                                <p class="text-slate-300 leading-relaxed">
+                                    Homes in regional neighborhoods like [Location, State] present familiar structural properties. Having renovated extensively in local areas, we anticipate issues with older framing, tight crawlspaces, and regional permitting.
+                                </p>
+                                <ul class="space-y-2 text-sm text-slate-300">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Familiarity with municipal code expectations.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Efficient permit processing using established contacts.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Professional references from your nearby community.</li>
+                                </ul>
+                            </div>
+                            <div class="lg:w-2/5 flex justify-center">
+                                <i class="fa-solid fa-map-location-dot text-[120px] text-brand-accent/20" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 4: Full-Service Team -->
+                        <div class="benefit-slide hidden transition-opacity duration-300 flex flex-col lg:flex-row gap-8 items-center" id="slide-4" role="tabpanel" aria-labelledby="tab-4">
+                            <div class="lg:w-3/5 space-y-5">
+                                <h3 class="font-heading font-extrabold text-2xl text-brand-accent uppercase">Full-Service Management</h3>
+                                <p class="text-slate-300 leading-relaxed">
+                                    Because we operate as an experienced home remodeler, bathroom builder, and general contractor, you avoid coordinating separate trades. We manage the design, structural calculations, framing, utilities, and final finishing.
+                                </p>
+                                <ul class="space-y-2 text-sm text-slate-300">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Complete structural project sequencing.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Direct management of electrical and plumbing services.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent" aria-hidden="true"></i> Streamlined structural transformations.</li>
+                                </ul>
+                            </div>
+                            <div class="lg:w-2/5 flex justify-center">
+                                <i class="fa-solid fa-people-group text-[120px] text-brand-accent/20" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Slide Control arrows -->
+                    <div class="flex justify-end gap-3 mt-8">
+                        <button onclick="prevBenefit()" aria-label="Preview previous benefit slide" class="w-10 h-10 bg-white/5 border border-white/10 hover:border-brand-accent hover:bg-brand-accent text-white hover:text-brand-navy rounded-full flex items-center justify-center transition duration-200">
+                            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <button onclick="nextBenefit()" aria-label="Preview next benefit slide" class="w-10 h-10 bg-white/5 border border-white/10 hover:border-brand-accent hover:bg-brand-accent text-white hover:text-brand-navy rounded-full flex items-center justify-center transition duration-200">
+                            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION (Social proof, 3 Cards) -->
+        <section id="testimonials" class="py-20 bg-brand-cream border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Title -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="flex items-center justify-center gap-2 text-brand-accent">
+                        <span class="h-0.5 w-8 bg-brand-accent"></span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">REVIEWS</span>
+                        <span class="h-0.5 w-8 bg-brand-accent"></span>
+                    </div>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy uppercase tracking-tight leading-tight">
+                        WHAT NEIGHBORS SAY ABOUT OUR REMODELING WORK
+                    </h2>
+                    <p class="text-slate-600">
+                        Verified feedback from home renovation projects in [Location, State] and surrounding areas.
+                    </p>
+                </div>
+                
+                <!-- Review Cards Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Review 1 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-premium border border-slate-100 flex flex-col justify-between relative transition duration-300 hover:shadow-cardhover">
+                        <!-- Google reviews quote icon -->
+                        <div class="absolute -top-4 -left-4 w-10 h-10 bg-brand-accent text-brand-navy rounded-full flex items-center justify-center shadow font-bold text-lg">
+                            "
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <!-- Rating Stars -->
+                            <div class="flex text-brand-accent text-sm gap-1" aria-label="5 star review">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed italic">
+                                "The team was extremely professional and friendly. They answered all of our questions, understood the detailed scope of our kitchen and bath remodel, and provided a comprehensive estimate. The support during construction was excellent. All of the projects came out looking great!"
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 pt-6 border-t border-slate-100 mt-6">
+                            <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-brand-navy font-bold text-sm">
+                                EI
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-bold text-sm text-brand-navy">Erik Irani</span>
+                                <span class="text-[10px] text-brand-lightslate uppercase font-bold flex items-center gap-1">
+                                    <i class="fa-brands fa-google text-brand-accent"></i> Verified Homeowner
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-premium border border-slate-100 flex flex-col justify-between relative transition duration-300 hover:shadow-cardhover">
+                        <!-- Google reviews quote icon -->
+                        <div class="absolute -top-4 -left-4 w-10 h-10 bg-brand-accent text-brand-navy rounded-full flex items-center justify-center shadow font-bold text-lg">
+                            "
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <!-- Rating Stars -->
+                            <div class="flex text-brand-accent text-sm gap-1" aria-label="5 star review">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed italic">
+                                "We had a great experience with our finished attic space renovation. They installed drywall, trim, custom shelving, and did painting. It's an older house with past DIY changes, and they problem-solved beautifully. Finished on time and within budget. Made a huge difference!"
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 pt-6 border-t border-slate-100 mt-6">
+                            <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-brand-navy font-bold text-sm">
+                                MG
+                        </div>
+                            <div class="flex flex-col">
+                                <span class="font-bold text-sm text-brand-navy">Margaret Guryan</span>
+                                <span class="text-[10px] text-brand-lightslate uppercase font-bold flex items-center gap-1">
+                                    <i class="fa-brands fa-google text-brand-accent"></i> Verified Homeowner
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-premium border border-slate-100 flex flex-col justify-between relative transition duration-300 hover:shadow-cardhover">
+                        <!-- Google reviews quote icon -->
+                        <div class="absolute -top-4 -left-4 w-10 h-10 bg-brand-accent text-brand-navy rounded-full flex items-center justify-center shadow font-bold text-lg">
+                            "
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <!-- Rating Stars -->
+                            <div class="flex text-brand-accent text-sm gap-1" aria-label="5 star review">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed italic">
+                                "Excellent company from leadership to on-site crews! They are extremely professional, knowledgeable, and thorough, with a wide range of remodeling expertise. Consistent communication meant our project started and finished on time. We can't recommend them highly enough!"
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 pt-6 border-t border-slate-100 mt-6">
+                            <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-brand-navy font-bold text-sm">
+                                KK
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-bold text-sm text-brand-navy">Kristi Kuhn</span>
+                                <span class="text-[10px] text-brand-lightslate uppercase font-bold flex items-center gap-1">
+                                    <i class="fa-brands fa-google text-brand-accent"></i> Verified Homeowner
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Google Review Aggregate Badge -->
+                <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left bg-slate-50 border border-slate-200/60 p-4 rounded-2xl max-w-lg mx-auto shadow-sm">
+                    <div class="flex text-brand-accent text-xl gap-1" aria-label="5 star aggregate rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="text-sm text-slate-600">
+                        <span class="font-bold text-brand-navy">5.0 / 5.0 Rating</span> based on reviews from local homeowners in [Location, State].
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- CONTACT & LEAD CAPTURE SECTION (Conversion central) -->
+        <section id="contact" class="py-20 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                    
+                    <!-- Left info column -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-2 text-brand-accent">
+                                <span class="h-0.5 w-8 bg-brand-accent"></span>
+                                <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">CONTACT US</span>
+                            </div>
+                            <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy uppercase tracking-tight leading-tight">
+                                GET A FREE PROPERTY WALKTHROUGH ESTIMATE
+                            </h2>
+                            <p class="text-slate-600">
+                                Planning a remodeling project? Tell us about your goals, and we'll schedule a detailed walkthrough to provide a comprehensive, transparent cost estimate.
+                            </p>
+                        </div>
+                        
+                        <!-- Contacts list -->
+                        <div class="space-y-4 text-slate-600">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brand-navy border border-slate-200/50 mt-1 flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-brand-navy text-sm">Office Location</span>
+                                    <span class="text-sm">[Street Address, City, State, ZIP]</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brand-navy border border-slate-200/50 mt-1 flex-shrink-0">
+                                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-brand-navy text-sm">Direct Phone</span>
+                                    <a href="tel:[Phone Number]" aria-label="Call direct [Phone Number]" class="text-sm text-slate-600 hover:text-brand-accent transition duration-150">[Phone Number]</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brand-navy border border-slate-200/50 mt-1 flex-shrink-0">
+                                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-brand-navy text-sm">Email Address</span>
+                                    <a href="mailto:[Email Address]" aria-label="Send email to [Email Address]" class="text-sm text-slate-600 hover:text-brand-accent transition duration-150">[Email Address]</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Licenses list -->
+                        <div class="bg-slate-50 border border-slate-200/60 rounded-2xl p-6 space-y-3">
+                            <h4 class="font-heading font-bold text-sm text-brand-navy uppercase tracking-wider">STATE REGISTRATIONS</h4>
+                            <div class="grid grid-cols-2 gap-2 text-xs font-mono text-slate-500">
+                                <div>MD License: <span class="font-bold text-brand-navy">[MHIC Number]</span></div>
+                                <div>VA License: <span class="font-bold text-brand-navy">[VA Number]</span></div>
+                                <div>DC License: <span class="font-bold text-brand-navy">[DC Number]</span></div>
+                            </div>
+                        </div>
+                        
+                        <!-- List of serving areas -->
+                        <div class="space-y-3">
+                            <h4 class="font-heading font-bold text-sm text-brand-navy uppercase tracking-wider">PROUDLY SERVING:</h4>
+                            <p class="text-xs text-slate-500 leading-relaxed font-semibold uppercase">
+                                [Location 1] • [Location 2] • [Location 3] • [Location 4] • [Location 5] • [Location 6] • [Location 7] & surrounding areas.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Form column -->
+                    <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-100 relative">
+                        <!-- Glassmorphism overlay when loading / success -->
+                        <div id="form-overlay" class="absolute inset-0 bg-white/95 backdrop-blur-sm rounded-3xl flex flex-col items-center justify-center p-8 text-center opacity-0 pointer-events-none transition-all duration-300 z-10" role="alert" aria-live="assertive">
+                            <div id="overlay-loader" class="space-y-4">
+                                <div class="inline-block w-12 h-12 border-4 border-slate-200 border-t-brand-accent rounded-full animate-spin"></div>
+                                <p class="text-brand-navy font-bold">Submitting estimate request...</p>
+                            </div>
+                            <div id="overlay-success" class="space-y-6 hidden">
+                                <div class="w-20 h-20 bg-brand-accentLight border border-brand-accent/20 text-brand-accent rounded-full flex items-center justify-center mx-auto text-4xl pulse-gold-ring">
+                                    <i class="fa-solid fa-check" aria-hidden="true"></i>
+                                </div>
+                                <div class="space-y-2">
+                                    <h3 class="font-heading font-extrabold text-2xl text-brand-navy uppercase">Thank You!</h3>
+                                    <p class="text-slate-600 max-w-md mx-auto">
+                                        Your estimate request has been received. Our team will review the details and contact you within 24 hours to schedule a property walkthrough.
+                                    </p>
+                                </div>
+                                <button onclick="resetEstimateForm()" aria-label="Return back to the lead form" class="bg-brand-navy text-white px-6 py-2.5 rounded-lg font-semibold text-sm">
+                                    Back to Form
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <form id="estimate-form" onsubmit="handleFormSubmit(event)" class="space-y-6" novalidate>
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <!-- First Name -->
+                                <div class="space-y-1.5">
+                                    <label for="form-first-name" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">First Name <span class="text-red-500">*</span></label>
+                                    <input type="text" id="form-first-name" name="firstName" required aria-required="true" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                    <p class="text-xs text-red-500 mt-1 hidden" id="err-first-name">First name is required.</p>
+                                </div>
+                                <!-- Last Name -->
+                                <div class="space-y-1.5">
+                                    <label for="form-last-name" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Last Name <span class="text-red-500">*</span></label>
+                                    <input type="text" id="form-last-name" name="lastName" required aria-required="true" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                    <p class="text-xs text-red-500 mt-1 hidden" id="err-last-name">Last name is required.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Street Address -->
+                            <div class="space-y-1.5">
+                                <label for="form-address" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Street Address <span class="text-red-500">*</span></label>
+                                <input type="text" id="form-address" name="address" required aria-required="true" placeholder="e.g. 123 Main St, [City, State]" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                <p class="text-xs text-red-500 mt-1 hidden" id="err-address">Street address is required.</p>
+                            </div>
+                            
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <!-- Phone -->
+                                <div class="space-y-1.5">
+                                    <label for="form-phone" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Phone Number <span class="text-red-500">*</span></label>
+                                    <input type="tel" id="form-phone" name="phone" required aria-required="true" placeholder="e.g. 123-456-7890" pattern="^\+?[0-9\(\)\-\s]{7,20}$" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                    <p class="text-xs text-red-500 mt-1 hidden" id="err-phone">Please enter a valid phone number (at least 7 digits).</p>
+                                </div>
+                                <!-- Email -->
+                                <div class="space-y-1.5">
+                                    <label for="form-email" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Email Address <span class="text-red-500">*</span></label>
+                                    <input type="email" id="form-email" name="email" required aria-required="true" placeholder="name@domain.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                    <p class="text-xs text-red-500 mt-1 hidden" id="err-email">Please enter a valid email address.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Service Needed Dropdown -->
+                            <div class="space-y-1.5">
+                                <label for="form-service" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Service Required <span class="text-red-500">*</span></label>
+                                <select id="form-service" name="service" required aria-required="true" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                    <option value="" disabled selected>Select a service...</option>
+                                    <option value="Kitchen Remodeling">Kitchen Remodeling</option>
+                                    <option value="Bathroom Remodeling">Bathroom Remodeling</option>
+                                    <option value="Whole-Home Remodeling">Whole-Home Remodeling</option>
+                                    <option value="Decks & Porches">Decks & Porches</option>
+                                    <option value="General Contracting / Additions">General Contracting / Additions</option>
+                                    <option value="Other">Other Remodeling Project</option>
+                                </select>
+                                <p class="text-xs text-red-500 mt-1 hidden" id="err-service">Please select a service option.</p>
+                            </div>
+                            
+                            <!-- Project Details -->
+                            <div class="space-y-1.5">
+                                <label for="form-details" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Describe Your Project <span class="text-red-500">*</span></label>
+                                <textarea id="form-details" name="details" required aria-required="true" rows="4" placeholder="Briefly describe your goals, dimensions, approximate budget or materials desired..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm"></textarea>
+                                <p class="text-xs text-red-500 mt-1 hidden" id="err-details">Please enter your project details.</p>
+                            </div>
+                            
+                            <button type="submit" aria-label="Submit the estimate request form" class="w-full bg-brand-navy text-white hover:bg-brand-accent hover:text-brand-navy font-bold py-4 rounded-xl shadow-premium border-2 border-brand-navy hover:border-brand-accent transition duration-200 uppercase tracking-wider text-sm flex items-center justify-center gap-2">
+                                <span>Submit Estimate Request</span> <i class="fa-solid fa-paper-plane text-xs" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- FOOTER SECTION (SEO structural links) -->
     <footer class="bg-slate-900 border-t border-slate-800 text-slate-300 py-16 relative">
@@ -1027,13 +1056,13 @@
                     </p>
                     <div class="text-xs space-y-2 text-slate-400">
                         <p class="flex items-start gap-2">
-                            <i class="fa-solid fa-location-dot text-brand-accent mt-0.5"></i> <span>[Street Address, City, State, ZIP]</span>
+                            <i class="fa-solid fa-location-dot text-brand-accent mt-0.5" aria-hidden="true"></i> <span>[Street Address, City, State, ZIP]</span>
                         </p>
                         <p class="flex items-center gap-2">
-                            <i class="fa-solid fa-phone text-brand-accent"></i> <span>[Phone Number]</span>
+                            <i class="fa-solid fa-phone text-brand-accent" aria-hidden="true"></i> <span>[Phone Number]</span>
                         </p>
                         <p class="flex items-center gap-2">
-                            <i class="fa-solid fa-envelope text-brand-accent"></i> <span>[Email Address]</span>
+                            <i class="fa-solid fa-envelope text-brand-accent" aria-hidden="true"></i> <span>[Email Address]</span>
                         </p>
                     </div>
                 </div>
@@ -1042,11 +1071,11 @@
                 <div class="space-y-4">
                     <span class="font-heading font-extrabold text-sm text-white uppercase tracking-wider">Services</span>
                     <ul class="text-xs space-y-2 text-slate-400">
-                        <li><a href="#services" class="hover:text-brand-accent transition duration-150">Home Remodeling</a></li>
-                        <li><a href="#services" class="hover:text-brand-accent transition duration-150">Kitchen Remodeling</a></li>
-                        <li><a href="#services" class="hover:text-brand-accent transition duration-150">Bathroom Remodeling</a></li>
-                        <li><a href="#services" class="hover:text-brand-accent transition duration-150">General Contractor Additions</a></li>
-                        <li><a href="#services" class="hover:text-brand-accent transition duration-150">Wood & Composite Decks</a></li>
+                        <li><a href="#services" aria-label="Read about Home Remodeling" class="hover:text-brand-accent transition duration-150">Home Remodeling</a></li>
+                        <li><a href="#services" aria-label="Read about Kitchen Remodeling" class="hover:text-brand-accent transition duration-150">Kitchen Remodeling</a></li>
+                        <li><a href="#services" aria-label="Read about Bathroom Remodeling" class="hover:text-brand-accent transition duration-150">Bathroom Remodeling</a></li>
+                        <li><a href="#services" aria-label="Read about General Contracting Additions" class="hover:text-brand-accent transition duration-150">General Contractor Additions</a></li>
+                        <li><a href="#services" aria-label="Read about Wood & Composite Decks" class="hover:text-brand-accent transition duration-150">Wood & Composite Decks</a></li>
                     </ul>
                 </div>
                 
@@ -1081,23 +1110,23 @@
             <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
                 <div class="flex items-center gap-6">
                     <p>&copy; 2026 [Company Name] LLC. All Rights Reserved.</p>
-                    <a href="#" class="hover:text-brand-accent transition duration-150">Privacy Policy</a>
-                    <a href="#" class="hover:text-brand-accent transition duration-150">Terms of Service</a>
+                    <a href="#" aria-label="Privacy Policy page" class="hover:text-brand-accent transition duration-150">Privacy Policy</a>
+                    <a href="#" aria-label="Terms of Service page" class="hover:text-brand-accent transition duration-150">Terms of Service</a>
                 </div>
                 
                 <!-- Social media link icons (requested) -->
                 <div class="flex items-center gap-3">
-                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
-                        <i class="fa-brands fa-facebook-f"></i>
+                    <a href="#" aria-label="Visit our Facebook page" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a href="#" aria-label="Visit our Instagram profile" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
-                        <i class="fa-brands fa-linkedin-in"></i>
+                    <a href="#" aria-label="Visit our LinkedIn profile" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
-                        <i class="fa-brands fa-youtube"></i>
+                    <a href="#" aria-label="Visit our YouTube channel" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -1105,13 +1134,13 @@
     </footer>
 
     <!-- PERMANENT FLOATING WHATSAPP BUTTON (Bottom-right corner) -->
-    <div class="fixed bottom-6 right-6 z-40 flex items-center gap-3 group">
+    <div class="fixed bottom-6 right-6 z-45 flex items-center gap-3 group">
         <!-- Floating Tooltip message -->
         <span class="bg-brand-navy border border-slate-700 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-premium opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
             Chat on WhatsApp!
         </span>
-        <a href="https://wa.me/[WhatsApp Number]?text=Hi!%20I'm%20interested%20in%20a%20free%20remodeling%20estimate." target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center text-2xl shadow-xl transition-all duration-200 hover:-translate-y-1 relative pulse-gold-ring" style="animation: pulse-gold 2.5s infinite;">
-            <i class="fa-brands fa-whatsapp"></i>
+        <a href="https://wa.me/[WhatsApp Number]?text=Hi!%20I'm%20interested%20in%20a%20free%20remodeling%20estimate." target="_blank" rel="noopener noreferrer" aria-label="Contact us directly on WhatsApp" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center text-2xl shadow-xl transition-all duration-200 hover:-translate-y-1 relative pulse-gold-ring" style="animation: pulse-gold 2.5s infinite;">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
             <span class="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full border-2 border-emerald-500 animate-ping"></span>
         </a>
     </div>
@@ -1123,11 +1152,11 @@
             
             <!-- Image Left -->
             <div class="md:w-5/12 bg-slate-900 relative">
-                <img id="modal-image" src="" alt="Service Image" class="w-full h-48 md:h-full object-cover">
+                <img id="modal-image" src="" alt="Service details visual" class="w-full h-48 md:h-full object-cover">
                 <div class="absolute inset-0 bg-brand-navy/20"></div>
                 <!-- Mini Logo/Text overlay -->
                 <div class="absolute top-4 left-4 bg-brand-navy/95 border border-slate-700 text-white p-2 rounded-lg font-bold text-xs uppercase tracking-wider flex items-center gap-1.5">
-                    <i class="fa-solid fa-shield-halved text-brand-accent"></i> [Company Name]
+                    <i class="fa-solid fa-shield-halved text-brand-accent" aria-hidden="true"></i> [Company Name]
                 </div>
             </div>
             
@@ -1139,7 +1168,7 @@
                             <span class="text-brand-accent text-xs font-bold uppercase tracking-widest" id="modal-subtitle">Service Offerings</span>
                             <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-navy uppercase tracking-tight" id="modal-title">Service Title</h3>
                         </div>
-                        <button onclick="closeServiceModal()" class="text-brand-navy hover:text-brand-accent p-1.5 bg-slate-100 rounded-lg hover:bg-slate-200 transition duration-150">
+                        <button onclick="closeServiceModal()" aria-label="Close modal dialog" class="text-brand-navy hover:text-brand-accent p-1.5 bg-slate-100 rounded-lg hover:bg-slate-200 transition duration-150">
                             <i class="fa-solid fa-xmark"></i>
                         </button>
                     </div>
@@ -1151,7 +1180,7 @@
                 </div>
                 
                 <div class="pt-8 border-t border-slate-100 mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-                    <a href="#contact" onclick="closeServiceModal()" class="bg-brand-navy hover:bg-brand-accent text-white hover:text-brand-navy text-center px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-wider transition-all duration-200">
+                    <a href="#contact" onclick="closeServiceModal()" aria-label="Close modal and navigate to the estimate form" class="bg-brand-navy hover:bg-brand-accent text-white hover:text-brand-navy text-center px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-wider transition-all duration-200">
                         Book Free Estimate
                     </a>
                     <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest text-center">Fully Licensed & Insured</span>
@@ -1162,106 +1191,160 @@
     </div>
 
 
-    <!-- JAVASCRIPT: Interactivity control & logical updates -->
+    <!-- JAVASCRIPT: Interactivity control & logical updates (Defer loaded via DOMContentLoaded) -->
     <script>
-        // Header navigation blur-bg toggle on scroll
-        const header = document.getElementById('main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-md');
-                header.classList.remove('bg-white/95');
-                header.classList.add('bg-white');
-            } else {
-                header.classList.remove('shadow-md');
-                header.classList.remove('bg-white');
-                header.classList.add('bg-white/95');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header navigation blur-bg toggle on scroll
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                    header.classList.remove('bg-white/95');
+                    header.classList.add('bg-white');
+                } else {
+                    header.classList.remove('shadow-md');
+                    header.classList.remove('bg-white');
+                    header.classList.add('bg-white/95');
+                }
+            }, { passive: true });
+
+            // Mobile Menu Drawer Control
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const mobileNavLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('hidden');
+                // Force reflow
+                mobileMenu.offsetWidth;
+                mobileMenu.classList.add('opacity-100');
+                mobileMenuDrawer.classList.remove('translate-x-full');
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-xmark');
+                mobileMenuToggle.setAttribute('aria-expanded', 'true');
             }
-        });
 
-        // Mobile Menu Drawer Control
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
-        const hamburgerIcon = document.getElementById('hamburger-icon');
-        const mobileNavLinks = mobileMenu.querySelectorAll('a[href^="#"]');
-
-        function openMobileMenu() {
-            mobileMenu.classList.remove('hidden');
-            // Force reflow
-            mobileMenu.offsetWidth;
-            mobileMenu.classList.add('opacity-100');
-            mobileMenuDrawer.classList.remove('translate-x-full');
-            hamburgerIcon.classList.remove('fa-bars');
-            hamburgerIcon.classList.add('fa-xmark');
-        }
-
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('opacity-100');
-            mobileMenuDrawer.classList.add('translate-x-full');
-            hamburgerIcon.classList.remove('fa-xmark');
-            hamburgerIcon.classList.add('fa-bars');
-            // Wait for transition before hiding backdrop
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-            }, 300);
-        }
-
-        mobileMenuToggle.addEventListener('click', () => {
-            if (mobileMenu.classList.contains('hidden')) {
-                openMobileMenu();
-            } else {
-                closeMobileMenu();
+            function closeMobileMenu() {
+                mobileMenu.classList.remove('opacity-100');
+                mobileMenuDrawer.classList.add('translate-x-full');
+                hamburgerIcon.classList.remove('fa-xmark');
+                hamburgerIcon.classList.add('fa-bars');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
             }
-        });
 
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) closeMobileMenu();
-        });
-
-        // Close mobile drawer when clicking anchor links
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-
-        // Stats counter count-up animation logic using Intersection Observer
-        const counters = document.querySelectorAll('.counter');
-        const counterSection = document.querySelector('.counter').parentElement.parentElement.parentElement;
-        
-        let countersAnimated = false;
-        
-        function animateCounters() {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const duration = 1500; // 1.5 seconds
-                const stepTime = Math.abs(Math.floor(duration / target));
-                
-                let current = 0;
-                const timer = setInterval(() => {
-                    current += Math.ceil(target / (duration / 25)); // Smooth increments
-                    if (current >= target) {
-                        counter.textContent = target;
-                        clearInterval(timer);
-                    } else {
-                        counter.textContent = current;
-                    }
-                }, 25);
-            });
-        }
-        
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !countersAnimated) {
-                    animateCounters();
-                    countersAnimated = true;
+            mobileMenuToggle.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('hidden')) {
+                    openMobileMenu();
+                } else {
+                    closeMobileMenu();
                 }
             });
-        }, { threshold: 0.5 });
-        
-        counterObserver.observe(counterSection);
 
-        // Services data object mapping click index to modal content
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) closeMobileMenu();
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // Stats counter count-up animation logic using Intersection Observer
+            const counters = document.querySelectorAll('.counter');
+            const counterSection = document.querySelector('.counter').parentElement.parentElement.parentElement;
+            
+            let countersAnimated = false;
+            
+            function animateCounters() {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 1500; // 1.5 seconds
+                    
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += Math.ceil(target / 60); // 60fps increments
+                        if (current >= target) {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = current;
+                        }
+                    }, 16.7);
+                });
+            }
+            
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !countersAnimated) {
+                        animateCounters();
+                        countersAnimated = true;
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            if (counterSection) {
+                counterObserver.observe(counterSection);
+            }
+
+            // Benefits slider auto-play configuration
+            let activeBenefitIndex = 0;
+            const totalBenefits = 5;
+            let benefitTimer = setInterval(nextBenefit, 8000);
+
+            window.showBenefit = function(index) {
+                activeBenefitIndex = index;
+                
+                // Update tabs active state
+                document.querySelectorAll('.benefit-tab').forEach((tab, i) => {
+                    if (i === index) {
+                        tab.classList.add('bg-white/5', 'border-white/5', 'text-white');
+                        tab.classList.remove('bg-transparent', 'border-transparent', 'text-slate-400');
+                        tab.setAttribute('aria-selected', 'true');
+                    } else {
+                        tab.classList.remove('bg-white/5', 'border-white/5', 'text-white');
+                        tab.classList.add('bg-transparent', 'border-transparent', 'text-slate-400');
+                        tab.setAttribute('aria-selected', 'false');
+                    }
+                });
+                
+                // Update slides active state
+                document.querySelectorAll('.benefit-slide').forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.remove('hidden');
+                        setTimeout(() => {
+                            slide.classList.remove('opacity-0');
+                        }, 50);
+                    } else {
+                        slide.classList.add('hidden', 'opacity-0');
+                    }
+                });
+                
+                resetBenefitTimer();
+            };
+
+            window.nextBenefit = function() {
+                let nextIndex = (activeBenefitIndex + 1) % totalBenefits;
+                window.showBenefit(nextIndex);
+            };
+
+            window.prevBenefit = function() {
+                let prevIndex = (activeBenefitIndex - 1 + totalBenefits) % totalBenefits;
+                window.showBenefit(prevIndex);
+            };
+
+            function resetBenefitTimer() {
+                clearInterval(benefitTimer);
+                benefitTimer = setInterval(window.nextBenefit, 8000);
+            }
+        });
+
+        // Services data mapping (accessible globally)
         const servicesData = [
             {
                 title: "Whole-Home Remodeling",
@@ -1330,7 +1413,7 @@
             }
         ];
 
-        // Service Modal Window logic
+        // Service Modal dialog logic (accessible globally)
         const modalBackdrop = document.getElementById('service-modal-backdrop');
         const modalCard = document.getElementById('service-modal-card');
         const modalImage = document.getElementById('modal-image');
@@ -1342,7 +1425,6 @@
             const data = servicesData[index];
             if (!data) return;
             
-            // Set content
             modalImage.src = data.image;
             modalTitle.textContent = data.title;
             modalSubtitle.textContent = data.subtitle;
@@ -1351,103 +1433,35 @@
             data.bullets.forEach(bullet => {
                 const li = document.createElement('li');
                 li.className = 'flex items-start gap-2.5';
-                li.innerHTML = `<i class="fa-solid fa-circle-check text-brand-accent mt-0.5 flex-shrink-0"></i> <span>${bullet}</span>`;
+                li.innerHTML = `<i class="fa-solid fa-circle-check text-brand-accent mt-0.5 flex-shrink-0" aria-hidden="true"></i> <span>${bullet}</span>`;
                 modalList.appendChild(li);
             });
             
-            // Show modal backdrop
             modalBackdrop.classList.remove('pointer-events-none');
             modalBackdrop.classList.add('opacity-100');
-            
-            // Show modal card
             modalCard.classList.remove('scale-95', 'opacity-0');
             modalCard.classList.add('scale-100', 'opacity-100');
-            
-            // Stop page scroll
             document.body.style.overflow = 'hidden';
         }
 
         function closeServiceModal() {
-            // Hide modal card
             modalCard.classList.remove('scale-100', 'opacity-100');
             modalCard.classList.add('scale-95', 'opacity-0');
-            
-            // Hide backdrop
             modalBackdrop.classList.remove('opacity-100');
             setTimeout(() => {
                 modalBackdrop.classList.add('pointer-events-none');
             }, 300);
-            
-            // Restore scroll
             document.body.style.overflow = '';
         }
 
-        // Close modal on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeServiceModal();
         });
-        // Close modal on backdrop click
         modalBackdrop.addEventListener('click', (e) => {
             if (e.target === modalBackdrop) closeServiceModal();
         });
 
-        // Why Choose Us / Unique Benefits Slider logic
-        let activeBenefitIndex = 0;
-        const totalBenefits = 5;
-
-        function showBenefit(index) {
-            activeBenefitIndex = index;
-            
-            // Update tabs active state
-            document.querySelectorAll('.benefit-tab').forEach((tab, i) => {
-                if (i === index) {
-                    tab.classList.add('bg-white/5', 'border-white/5', 'text-white');
-                    tab.classList.remove('bg-transparent', 'border-transparent', 'text-slate-400');
-                } else {
-                    tab.classList.remove('bg-white/5', 'border-white/5', 'text-white');
-                    tab.classList.add('bg-transparent', 'border-transparent', 'text-slate-400');
-                }
-            });
-            
-            // Update slides active state
-            document.querySelectorAll('.benefit-slide').forEach((slide, i) => {
-                if (i === index) {
-                    slide.classList.remove('hidden');
-                    // Fade animation
-                    setTimeout(() => {
-                        slide.classList.remove('opacity-0');
-                    }, 50);
-                } else {
-                    slide.classList.add('hidden', 'opacity-0');
-                }
-            });
-        }
-
-        function nextBenefit() {
-            let nextIndex = (activeBenefitIndex + 1) % totalBenefits;
-            showBenefit(nextIndex);
-        }
-
-        function prevBenefit() {
-            let prevIndex = (activeBenefitIndex - 1 + totalBenefits) % totalBenefits;
-            showBenefit(prevIndex);
-        }
-        
-        // Auto play benefits every 8 seconds
-        let benefitTimer = setInterval(nextBenefit, 8000);
-        function resetBenefitTimer() {
-            clearInterval(benefitTimer);
-            benefitTimer = setInterval(nextBenefit, 8000);
-        }
-        
-        // Override function calls to reset auto-play timer on manual interaction
-        const originalShowBenefit = showBenefit;
-        showBenefit = function(index) {
-            originalShowBenefit(index);
-            resetBenefitTimer();
-        }
-
-        // Contact Lead Form Submitting Logic
+        // Contact Lead Form Validation & Submission Logic
         const formOverlay = document.getElementById('form-overlay');
         const overlayLoader = document.getElementById('overlay-loader');
         const overlaySuccess = document.getElementById('overlay-success');
@@ -1455,7 +1469,62 @@
 
         function handleFormSubmit(event) {
             event.preventDefault();
+            const form = event.target;
             
+            // Clean previous validation error messages
+            const inputs = ['first-name', 'last-name', 'address', 'phone', 'email', 'service', 'details'];
+            inputs.forEach(id => {
+                const element = document.getElementById(`form-${id}`);
+                const errElement = document.getElementById(`err-${id}`);
+                if (element) {
+                    element.classList.remove('border-red-500', 'ring-2', 'ring-red-200');
+                }
+                if (errElement) {
+                    errElement.classList.add('hidden');
+                }
+            });
+
+            // Perform Custom Form Validation
+            let isValid = true;
+            
+            // Text inputs standard required validation
+            const textFields = ['first-name', 'last-name', 'address', 'details', 'service'];
+            textFields.forEach(id => {
+                const element = document.getElementById(`form-${id}`);
+                const errElement = document.getElementById(`err-${id}`);
+                if (element && !element.value.trim()) {
+                    element.classList.add('border-red-500', 'ring-2', 'ring-red-200');
+                    if (errElement) errElement.classList.remove('hidden');
+                    isValid = false;
+                }
+            });
+
+            // Email validation
+            const emailElement = document.getElementById('form-email');
+            const errEmail = document.getElementById('err-email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailElement && (!emailElement.value.trim() || !emailRegex.test(emailElement.value))) {
+                emailElement.classList.add('border-red-500', 'ring-2', 'ring-red-200');
+                if (errEmail) errEmail.classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Phone number regex validation (at least 7 numbers)
+            const phoneElement = document.getElementById('form-phone');
+            const errPhone = document.getElementById('err-phone');
+            const phoneRegex = /^\+?[0-9\(\)\-\s]{7,20}$/;
+            if (phoneElement && (!phoneElement.value.trim() || !phoneRegex.test(phoneElement.value))) {
+                phoneElement.classList.add('border-red-500', 'ring-2', 'ring-red-200');
+                if (errPhone) errPhone.classList.remove('hidden');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                // Scroll back to the first invalid field or form container
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
             // Show overlay loader
             formOverlay.classList.remove('pointer-events-none');
             formOverlay.classList.add('opacity-100');
@@ -1466,13 +1535,11 @@
             setTimeout(() => {
                 overlayLoader.classList.add('hidden');
                 overlaySuccess.classList.remove('hidden');
-                // Optional: Clear form inputs
-                estimateForm.reset();
+                form.reset();
             }, 1800);
         }
 
         function resetEstimateForm() {
-            // Hide overlay
             formOverlay.classList.add('opacity-0');
             setTimeout(() => {
                 formOverlay.classList.add('pointer-events-none');

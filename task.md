@@ -25,3 +25,12 @@
   - [x] Contact form submission validation and success notification
   - [x] Permanent floating WhatsApp button with tooltip
 - [x] Verification & layout testing
+- [x] Refactoring and Production-Ready Standards:
+  - [x] Integrate HTML5 semantic markup tags (<header>, <main>, <section>, <footer>)
+  - [x] Add defer attributes and DOMContentLoaded safety wrappers to JavaScript
+  - [x] Add loading="lazy" to all lower fold images, while setting fetchpriority="high" for the LCP hero image
+  - [x] Integrate rich accessibility attributes (aria-labels, role, aria-live) on links, form inputs, and modals
+  - [x] Concat CSS rules for DRY code on recurring button/link configurations
+  - [x] Build comprehensive client-side form validation scripts with field-specific errors
+  - [x] Convert local filesystem paths to relative hosting paths for server and GitHub Pages support
+  - [x] Move project and copy walkthrough/task artifacts to C:\xampp\htdocs\renovations-website
