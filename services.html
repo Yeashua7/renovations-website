@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Renovations & Contracting | [Company Name]</title>
+    <title>Our Services - Renovations & Contracting | [Company Name]</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Welcome to [Company Name], your premier Licensed & Insured home remodeler and general contractor in [Location, State]. Transforming kitchens, bathrooms, and decks.">
+    <meta name="description" content="Discover our wide range of remodeling services, including custom kitchens, bathrooms, whole-home layouts, additions, composite decks, and porches.">
     <meta name="author" content="[Company Name]">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="./index.html">
+    <link rel="canonical" href="./services.html">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Home - Renovations & Contracting | [Company Name]">
-    <meta property="og:description" content="Welcome to [Company Name], your premier Licensed & Insured home remodeler and general contractor in [Location, State]. Transforming kitchens, bathrooms, and decks.">
-    <meta property="og:url" content="./index.html">
+    <meta property="og:title" content="Our Services - Renovations & Contracting | [Company Name]">
+    <meta property="og:description" content="Discover our wide range of remodeling services, including custom kitchens, bathrooms, whole-home layouts, additions, composite decks, and porches.">
+    <meta property="og:url" content="./services.html">
     <meta property="og:image" content="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&h=630&q=80">
     <meta property="og:site_name" content="[Company Name]">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Home - Renovations & Contracting | [Company Name]">
-    <meta name="twitter:description" content="Welcome to [Company Name], your premier Licensed & Insured home remodeler and general contractor in [Location, State].">
+    <meta name="twitter:title" content="Our Services - Renovations & Contracting | [Company Name]">
+    <meta name="twitter:description" content="Discover our wide range of remodeling services, including custom kitchens, bathrooms, whole-home layouts, additions, composite decks, and porches.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&h=630&q=80">
     
     <!-- Google Fonts -->
@@ -82,6 +82,7 @@
         }
         .animate-float { animation: float 4s ease-in-out infinite; }
         .pulse-gold-ring { animation: pulse-gold 2s infinite; }
+        .modal-active { opacity: 1; pointer-events: auto; transform: scale(1); }
     </style>
 </head>
 <body class="font-body bg-brand-cream text-brand-navy overflow-x-hidden antialiased">
@@ -126,23 +127,23 @@
                     </a>
                 </div>
                 
-                <!-- Desktop Navigation Menu (Home Page Active Link) -->
+                <!-- Desktop Navigation Menu (Services Page Active Link) -->
                 <nav class="hidden md:flex space-x-8" aria-label="Main navigation menu">
-                    <a href="./index.html" aria-label="Navigate to Home page" class="text-brand-accent font-semibold text-sm transition-all duration-150 relative group">
+                    <a href="./index.html" aria-label="Navigate to Home page" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
                         Home
-                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-accent"></span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="./services.html" aria-label="Navigate to Services page" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
+                    <a href="./services.html" aria-label="Navigate to Services page" class="text-brand-accent font-semibold text-sm transition-all duration-150 relative group">
                         Services
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-305 group-hover:w-full"></span>
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-accent"></span>
                     </a>
                     <a href="./about.html" aria-label="Navigate to About page" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
                         About Us
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-305 group-hover:w-full"></span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="./contact.html" aria-label="Navigate to Contact page" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
                         Contact
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-305 group-hover:w-full"></span>
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
                     </a>
                 </nav>
                 
@@ -176,11 +177,11 @@
                 </div>
                 
                 <div class="flex flex-col space-y-4 font-medium text-lg pt-4">
-                    <a href="./index.html" aria-label="Navigate to Home page" class="text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between font-semibold">
-                        <span>Home</span> <i class="fa-solid fa-chevron-right text-xs text-brand-accent" aria-hidden="true"></i>
+                    <a href="./index.html" aria-label="Navigate to Home page" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
+                        <span>Home</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300" aria-hidden="true"></i>
                     </a>
-                    <a href="./services.html" aria-label="Navigate to Services page" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
-                        <span>Services</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300" aria-hidden="true"></i>
+                    <a href="./services.html" aria-label="Navigate to Services page" class="text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between font-semibold">
+                        <span>Services</span> <i class="fa-solid fa-chevron-right text-xs text-brand-accent" aria-hidden="true"></i>
                     </a>
                     <a href="./about.html" aria-label="Navigate to About page" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
                         <span>About Us</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300" aria-hidden="true"></i>
@@ -208,230 +209,147 @@
     </header>
 
     <main>
-        <!-- HERO SECTION -->
-        <section id="hero" class="relative bg-brand-navy text-white overflow-hidden py-16 lg:py-24">
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
-            <div class="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
-            
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                    
-                    <!-- Left text column -->
-                    <div class="lg:col-span-7 flex flex-col space-y-6">
-                        <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full py-1 px-3 self-start">
-                            <i class="fa-solid fa-shield-halved text-brand-accent text-xs" aria-hidden="true"></i>
-                            <span class="text-xs font-semibold tracking-wider text-slate-300 uppercase">FULLY LICENSED & INSURED CONTRACTOR</span>
-                        </div>
-                        
-                        <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] uppercase">
-                            MAKE YOUR DREAM <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-amber-300">REMODEL</span> REAL — WITHOUT THE CONFUSION
-                        </h1>
-                        
-                        <p class="text-lg text-slate-300 max-w-xl leading-relaxed">
-                            If your home in <span class="font-semibold text-white">[Location, State]</span> needs a better layout, more space, or a modern update, our team can help. We provide code-compliant remodeling with transparent communication and quality craftsmanship.
-                        </p>
-                        
-                        <!-- Call To Actions -->
-                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                            <a href="./contact.html" aria-label="Schedule a free estimate walkthrough" class="bg-brand-accent hover:bg-brand-accentHover text-brand-navy text-center px-8 py-4 rounded-xl font-bold tracking-wide transition-all duration-205 shadow-lg shadow-brand-accent/20">
-                                SCHEDULE A FREE ESTIMATE
-                            </a>
-                            <a href="tel:[Phone Number]" aria-label="Call [Company Name] now" class="border-2 border-white/20 hover:border-brand-accent hover:bg-white/5 text-white hover:text-brand-accent text-center px-8 py-4 rounded-xl font-bold tracking-wide transition-all duration-205 flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-phone" aria-hidden="true"></i> CALL US: [Phone Number]
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Right LCP image column -->
-                    <div class="lg:col-span-5 relative">
-                        <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-900 group">
-                            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=780&q=80" alt="Beautiful kitchen remodeling work showcasing gold details" fetchpriority="high" class="w-full h-[350px] sm:h-[450px] object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition duration-305"></div>
-                            
-                            <!-- Floating Badge -->
-                            <div class="absolute bottom-6 left-6 bg-brand-navy/95 border border-slate-700 backdrop-blur-sm p-4 rounded-xl flex items-center gap-3.5 shadow-premium animate-float">
-                                <div class="bg-brand-accent text-brand-navy font-extrabold text-2xl w-12 h-12 rounded-lg flex items-center justify-center">
-                                    17+
-                                </div>
-                                <div class="flex flex-col">
-                                    <span class="text-xs uppercase text-slate-400 font-bold tracking-wider">Years of</span>
-                                    <span class="text-sm font-bold text-white">Local Craftsmanship</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute -top-6 -left-6 w-full h-full border-2 border-brand-accent/20 rounded-2xl pointer-events-none -z-0"></div>
-                    </div>
-                    
+        <!-- SERVICE BANNER HEADER -->
+        <section class="bg-brand-navy text-white py-16 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-brand-accent/5 pointer-events-none blur-3xl"></div>
+            <div class="max-w-4xl mx-auto px-4 space-y-4 relative z-10">
+                <div class="flex items-center justify-center gap-2 text-brand-accent">
+                    <span class="h-0.5 w-8 bg-brand-accent"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest">LICENSED & INSURED</span>
+                    <span class="h-0.5 w-8 bg-brand-accent"></span>
                 </div>
+                <h1 class="font-heading font-extrabold text-3xl sm:text-5xl uppercase tracking-tight leading-tight">
+                    OUR REMODELING SERVICES
+                </h1>
+                <p class="text-slate-300 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+                    Explore our five residential remodeling divisions. We handle design layout adjustments, permit acquisitions, structural framing, plumbing, and fine carpentry.
+                </p>
             </div>
         </section>
 
-        <!-- STATS COUNTER BAR -->
-        <section class="bg-slate-900 border-y border-slate-800 text-white py-12 relative" aria-label="Trust statistics">
+        <!-- DETAILED SERVICES GRID -->
+        <section class="py-20 bg-brand-cream">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-800 text-center">
-                    <div class="flex flex-col items-center justify-center p-4">
-                        <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold font-heading mb-1.5 flex items-center justify-center">
-                            <span class="counter" data-target="17">0</span>+
-                        </span>
-                        <span class="text-sm text-slate-400 uppercase tracking-widest font-bold">Years of Experience</span>
-                    </div>
-                    <div class="flex flex-col items-center justify-center p-4">
-                        <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold font-heading mb-1.5 flex items-center justify-center">
-                            <span class="counter" data-target="500">0</span>+
-                        </span>
-                        <span class="text-sm text-slate-400 uppercase tracking-widest font-bold">Happy Local Homeowners</span>
-                    </div>
-                    <div class="flex flex-col items-center justify-center p-4">
-                        <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold font-heading mb-1.5 flex items-center justify-center">
-                            <span class="counter" data-target="99">0</span>%
-                        </span>
-                        <span class="text-sm text-slate-400 uppercase tracking-widest font-bold">Satisfaction Rate</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- OVERVIEW / WELCOME SUMMARY -->
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-6 relative">
-                        <div class="rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-slate-100 border border-slate-100">
-                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Beautifully updated living room remodel showcasing spacious layout" loading="lazy" class="w-full h-full object-cover">
-                        </div>
-                    </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <div class="lg:col-span-6 flex flex-col space-y-6">
-                        <div class="flex items-center gap-2 text-brand-accent">
-                            <span class="h-0.5 w-8 bg-brand-accent"></span>
-                            <span class="text-xs font-bold uppercase tracking-widest">WELCOME TO [COMPANY NAME]</span>
-                        </div>
-                        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy uppercase tracking-tight leading-tight">
-                            BUILDING COMFORT, SAFETY, AND HOME VALUE
-                        </h2>
-                        <p class="text-slate-600 leading-relaxed">
-                            For over 17 years, we have provided high-quality home additions and contracting services. As a <strong>Fully Licensed & Insured General Contractor</strong>, we focus on safe sequencing, waterproofing systems, and clear schedules.
-                        </p>
-                        <p class="text-slate-600 leading-relaxed">
-                            Whether you need an open layout kitchen, custom walk-in shower master bath, or structural house additions, we coordinate permits and inspect details on-site.
-                        </p>
-                        <div class="pt-2">
-                            <a href="./about.html" aria-label="Learn more about our company story" class="inline-block bg-brand-navy hover:bg-brand-accent text-white hover:text-brand-navy px-8 py-3.5 rounded-xl font-bold tracking-wide transition-all duration-200">
-                                OUR STORY & BENEFITS
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SERVICES SUMMARY: Top 3 Offerings -->
-        <section class="py-20 bg-brand-cream border-t border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                    <div class="flex items-center justify-center gap-2 text-brand-accent">
-                        <span class="h-0.5 w-8 bg-brand-accent"></span>
-                        <span class="text-xs font-bold uppercase tracking-widest">OUR SERVICES</span>
-                        <span class="h-0.5 w-8 bg-brand-accent"></span>
-                    </div>
-                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy uppercase tracking-tight leading-tight">
-                        TOP REMODELING SPECIALTIES
-                    </h2>
-                    <p class="text-slate-600">
-                        A summary of our most requested residential renovation services in [Location, State].
-                    </p>
-                </div>
-                
-                <!-- Top 3 Services Grid -->
-                <div class="grid md:grid-cols-3 gap-8">
                     <!-- Service 1: Whole-Home Remodeling -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 flex flex-col justify-between group hover:shadow-cardhover hover:-translate-y-1.5 transition-all duration-300">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 flex flex-col group hover:shadow-cardhover hover:-translate-y-1.5 transition-all duration-300">
                         <div class="relative h-56 overflow-hidden bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Beautiful residential home remodeling details" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Living room remodeling with customized layout" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                             <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">01</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3">
                                 <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Whole-Home Remodeling</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-3">
-                                    We transform residential spaces into bright, open layout concepts. Custom drywall, framing extensions, trim detailing, and code-compliant installations.
+                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                                    Closed-off rooms and awkward layouts? We transform home spaces into bright, open interiors. From custom layouts and drywall repairs to full renovations, we organize the planning and sequence correctly.
                                 </p>
                             </div>
-                            <a href="./services.html" aria-label="View services details" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
-                                <span>Read Details</span>
+                            <button onclick="openServiceModal(0)" aria-label="Read details for whole home remodeling" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
+                                <span>Read Full Details</span>
                                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
                     <!-- Service 2: Kitchen Remodeling -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 flex flex-col justify-between group hover:shadow-cardhover hover:-translate-y-1.5 transition-all duration-300">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 flex flex-col group hover:shadow-cardhover hover:-translate-y-1.5 transition-all duration-300">
                         <div class="relative h-56 overflow-hidden bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Elegant custom kitchen counters and island remodel" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Modern kitchen countertops island construction" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                             <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">02</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3">
                                 <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Kitchen Remodeling</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-3">
-                                    Outdated, dark kitchen layout? We install custom islands, quartz countertops, cabinet refacing systems, and new plumbing fixtures.
+                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                                    The kitchen is the heart of your home. If yours feels cramped or outdated, we redesign it for real functionality. Custom island installations, quartz countertops, modern storage systems, and code-compliant plumbing.
                                 </p>
                             </div>
-                            <a href="./services.html" aria-label="View services details" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
-                                <span>Read Details</span>
+                            <button onclick="openServiceModal(1)" aria-label="Read details for kitchen remodeling" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
+                                <span>Read Full Details</span>
                                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
                     <!-- Service 3: Bathroom Remodeling -->
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 flex flex-col justify-between group hover:shadow-cardhover hover:-translate-y-1.5 transition-all duration-300">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 flex flex-col group hover:shadow-cardhover hover:-translate-y-1.5 transition-all duration-300">
                         <div class="relative h-56 overflow-hidden bg-slate-900">
-                            <img src="https://images.unsplash.com/photo-1620626011761-996317b6979a?auto=format&fit=crop&w=600&q=80" alt="Modern walk in tile shower remodel details" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1620626011761-996317b6979a?auto=format&fit=crop&w=600&q=80" alt="Beautiful master bathroom tile shower build" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                             <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">03</span>
                         </div>
                         <div class="p-6 flex-grow flex flex-col justify-between">
                             <div class="space-y-3">
                                 <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Bathroom Remodeling</h3>
-                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-3">
-                                    We build waterproof master suites, custom walk-in tile showers, double vanity plumbing setups, and tub-to-shower conversion projects.
+                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                                    Bathrooms fail quietly through mold and slow leaks. We construct safe, moisture-resistant master suites, tile walk-in showers, tub-to-shower conversions, and premium ventilation integrations.
                                 </p>
                             </div>
-                            <a href="./services.html" aria-label="View services details" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
-                                <span>Read Details</span>
+                            <button onclick="openServiceModal(2)" aria-label="Read details for bathroom remodeling" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
+                                <span>Read Full Details</span>
                                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
-                </div>
 
-                <div class="text-center mt-12">
-                    <a href="./services.html" aria-label="View all residential renovation services" class="inline-block bg-brand-navy hover:bg-brand-accent text-white hover:text-brand-navy px-8 py-3.5 rounded-xl font-bold tracking-wide transition-all duration-200">
-                        VIEW ALL 5 SERVICES
-                    </a>
+                    <!-- Service 4: General Contractor -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 flex flex-col group hover:shadow-cardhover hover:-translate-y-1.5 transition-all duration-300">
+                        <div class="relative h-56 overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="House extension framing by builder team" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">04</span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">General Contractor</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                                    Managing complex structures? We handle structural additions, framing, structural calculations, permits, electrical layouts, plumbing systems, and final inspections. One point of contact for the whole build.
+                                </p>
+                            </div>
+                            <button onclick="openServiceModal(3)" aria-label="Read details for general contractor divisions" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
+                                <span>Read Full Details</span>
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Deck Builder -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-premium border border-slate-100 flex flex-col group hover:shadow-cardhover hover:-translate-y-1.5 transition-all duration-300">
+                        <div class="relative h-56 overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=600&q=80" alt="Custom composite deck structure" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <span class="absolute top-4 left-4 bg-brand-navy/90 text-brand-accent text-sm font-extrabold px-3 py-1 rounded-md">05</span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <h3 class="font-heading font-extrabold text-lg text-brand-navy uppercase tracking-tight">Decks & Porches</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                                    Rotting frames or bouncy deck structures present safety hazards. We design and build weather-resistant wood and composite decks, porches, privacy fences, and patios built to endure regional elements.
+                                </p>
+                            </div>
+                            <button onclick="openServiceModal(4)" aria-label="Read details for deck and fence construction" class="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-brand-navy group-hover:text-brand-accent transition duration-150 border-t border-slate-100 pt-4 w-full">
+                                <span>Read Full Details</span>
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- CTA Box -->
+                    <div class="bg-gradient-to-br from-brand-navy to-slate-900 rounded-2xl overflow-hidden shadow-premium p-8 flex flex-col justify-between text-white border border-slate-800">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 bg-white/5 border border-white/10 text-brand-accent rounded-xl flex items-center justify-center">
+                                <i class="fa-solid fa-clipboard-question text-xl" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="font-heading font-extrabold text-xl uppercase tracking-tight">Need a Custom Layout Plan?</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Have minor repairs, attics, structural extensions or garage conversions in mind? Reach out to schedule a property walkthrough and customized quote.
+                            </p>
+                        </div>
+                        <a href="./contact.html" aria-label="Contact us to schedule a property walkthrough" class="mt-8 bg-brand-accent hover:bg-brand-accentHover text-brand-navy text-center py-3.5 rounded-xl font-bold transition duration-200 uppercase tracking-wide text-sm">
+                            Schedule Walkthrough
+                        </a>
+                    </div>
+                    
                 </div>
             </div>
-        </section>
-
-        <!-- HIGH IMPACT CTA SECTION -->
-        <section class="py-16 bg-gradient-to-br from-brand-navy to-slate-955 text-white relative">
-            <div class="max-w-5xl mx-auto px-4 text-center space-y-6 relative z-10">
-                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl uppercase tracking-tight leading-tight">
-                    READY TO UPGRADE YOUR HOME IN [LOCATION, STATE]?
-                </h2>
-                <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-                    Start with a free layout cost estimate. Our local owner will walk your property, discuss materials, and deliver a detailed walkthrough schedule.
-                </p>
-                <div class="pt-4">
-                    <a href="./contact.html" aria-label="Book a free property estimate" class="inline-block bg-brand-accent hover:bg-brand-accentHover text-brand-navy px-8 py-4 rounded-xl font-bold transition duration-200 uppercase tracking-wide">
-                        SCHEDULE A FREE ESTIMATE
-                    </a>
-                </div>
-            </div>
-            <div class="absolute inset-0 bg-brand-accent/5 pointer-events-none blur-3xl rounded-full"></div>
         </section>
     </main>
 
@@ -523,6 +441,39 @@
         </a>
     </div>
 
+    <!-- SERVICES MODALS CONTAINER -->
+    <div id="service-modal-backdrop" class="fixed inset-0 z-50 bg-brand-navy/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+        <div id="service-modal-card" class="bg-white rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl scale-95 opacity-0 transition-all duration-300 flex flex-col md:flex-row max-h-[90vh] md:max-h-[600px] border border-slate-100">
+            <div class="md:w-5/12 bg-slate-900 relative">
+                <img id="modal-image" src="" alt="Service details visual" class="w-full h-48 md:h-full object-cover">
+                <div class="absolute inset-0 bg-brand-navy/20"></div>
+                <div class="absolute top-4 left-4 bg-brand-navy/95 border border-slate-700 text-white p-2 rounded-lg font-bold text-xs uppercase tracking-wider flex items-center gap-1.5">
+                    <i class="fa-solid fa-shield-halved text-brand-accent" aria-hidden="true"></i> [Company Name]
+                </div>
+            </div>
+            <div class="md:w-7/12 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
+                <div class="space-y-6">
+                    <div class="flex items-start justify-between">
+                        <div class="space-y-1">
+                            <span class="text-brand-accent text-xs font-bold uppercase tracking-widest" id="modal-subtitle">Service Offerings</span>
+                            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-navy uppercase tracking-tight" id="modal-title">Service Title</h3>
+                        </div>
+                        <button onclick="closeServiceModal()" aria-label="Close modal dialog" class="text-brand-navy hover:text-brand-accent p-1.5 bg-slate-100 rounded-lg hover:bg-slate-200 transition duration-150">
+                            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <ul class="space-y-3 text-slate-600 text-sm" id="modal-list"></ul>
+                </div>
+                <div class="pt-8 border-t border-slate-100 mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                    <a href="./contact.html" onclick="closeServiceModal()" aria-label="Navigate to contact page and schedule walkthrough" class="bg-brand-navy hover:bg-brand-accent text-white hover:text-brand-navy text-center px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-wider transition-all duration-200">
+                        Book Free Estimate
+                    </a>
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest text-center">Fully Licensed & Insured</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JAVASCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -535,7 +486,7 @@
                 }
             }, { passive: true });
 
-            // Mobile menu drawer toggling
+            // Mobile menu drawer control
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const mobileMenuClose = document.getElementById('mobile-menu-close');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -575,41 +526,123 @@
             mobileMenu.addEventListener('click', (e) => {
                 if (e.target === mobileMenu) closeMobileMenu();
             });
+        });
 
-            // Counters count up logic
-            const counters = document.querySelectorAll('.counter');
-            const counterSection = document.querySelector('.counter').parentElement.parentElement.parentElement;
-            let countersAnimated = false;
-            
-            function animateCounters() {
-                counters.forEach(counter => {
-                    const target = +counter.getAttribute('data-target');
-                    const duration = 1500;
-                    let current = 0;
-                    const timer = setInterval(() => {
-                        current += Math.ceil(target / 60);
-                        if (current >= target) {
-                            counter.textContent = target;
-                            clearInterval(timer);
-                        } else {
-                            counter.textContent = current;
-                        }
-                    }, 16.7);
-                });
+        // Services mapping
+        const servicesData = [
+            {
+                title: "Whole-Home Remodeling",
+                subtitle: "Space & Layout Transformations",
+                image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+                bullets: [
+                    "Professional whole-home residential design and structural planning services.",
+                    "Maximize storage layouts and update older interior design styles.",
+                    "Full-service contractor management: sequencing framing, insulation, and paint correctly.",
+                    "Drywall installations, trimming, ceiling repair, and luxury flooring.",
+                    "Custom room design modifications to open up dark, tight hallways.",
+                    "Code-compliant workmanship with on-site supervisor inspections."
+                ]
+            },
+            {
+                title: "Kitchen Remodeling",
+                subtitle: "Custom Kitchen Installations",
+                image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80",
+                bullets: [
+                    "Full kitchen layout expansions, customizations, and updates.",
+                    "Custom kitchen island builds for food prep, seating, and storage.",
+                    "Quartz, granite, and premium composite countertop installations.",
+                    "Cabinets refacing, custom cabinet designs, and lazy susan integration.",
+                    "Code-compliant plumbing upgrades, under-sink piping, and dishwasher tie-ins.",
+                    "LED ambient lighting designs and modern tile backsplashes."
+                ]
+            },
+            {
+                title: "Bathroom Remodeling",
+                subtitle: "Premium Bath & Master Suite Builds",
+                image: "https://images.unsplash.com/photo-1620626011761-996317b6979a?auto=format&fit=crop&w=800&q=80",
+                bullets: [
+                    "Full master bathroom renovations and custom fixtures.",
+                    "Premium walk-in tile shower installations with niches and seating.",
+                    "Tub-to-shower conversion options to optimize room dimensions.",
+                    "Waterproof structural backing boards to prevent mold and rot.",
+                    "Double vanity plumbing, quartz countertops, and modern sinks.",
+                    "Moisture-controlled extraction fans and energy-efficient lighting."
+                ]
+            },
+            {
+                title: "General Contractor",
+                subtitle: "Additions, Permits & Framing",
+                image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+                bullets: [
+                    "Room extensions, sunrooms, and second-story structural builds.",
+                    "Full permitting process management with local government authorities.",
+                    "Frame sequencing, foundation additions, and roofing tie-ins.",
+                    "Drywall, insulation, paint, plumbing, and electrical coordination.",
+                    "Certified tradesmen management under single supervisor oversight.",
+                    "Guaranteed compliance with standard residential structural codes."
+                ]
+            },
+            {
+                title: "Decks & Porches",
+                subtitle: "Premium Decking & Outdoor Spaces",
+                image: "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80",
+                bullets: [
+                    "Custom composite (Trex) and pressure-treated wood deck builds.",
+                    "Old deck structural replacements and support ledger updates.",
+                    "Privacy fencing installations (vinyl and wood) for safety and style.",
+                    "Porch conversions, screened-in patios, and wooden railing designs.",
+                    "Weather-resistant hardware and structural footing installations.",
+                    "Free outdoor property design and construction cost estimates."
+                ]
             }
+        ];
+
+        // Service Modal Window logic
+        const modalBackdrop = document.getElementById('service-modal-backdrop');
+        const modalCard = document.getElementById('service-modal-card');
+        const modalImage = document.getElementById('modal-image');
+        const modalTitle = document.getElementById('modal-title');
+        const modalSubtitle = document.getElementById('modal-subtitle');
+        const modalList = document.getElementById('modal-list');
+
+        function openServiceModal(index) {
+            const data = servicesData[index];
+            if (!data) return;
             
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !countersAnimated) {
-                        animateCounters();
-                        countersAnimated = true;
-                    }
-                });
-            }, { threshold: 0.2 });
+            modalImage.src = data.image;
+            modalTitle.textContent = data.title;
+            modalSubtitle.textContent = data.subtitle;
             
-            if (counterSection) {
-                counterObserver.observe(counterSection);
-            }
+            modalList.innerHTML = '';
+            data.bullets.forEach(bullet => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start gap-2.5';
+                li.innerHTML = `<i class="fa-solid fa-circle-check text-brand-accent mt-0.5 flex-shrink-0" aria-hidden="true"></i> <span>${bullet}</span>`;
+                modalList.appendChild(li);
+            });
+            
+            modalBackdrop.classList.remove('pointer-events-none');
+            modalBackdrop.classList.add('opacity-100');
+            modalCard.classList.remove('scale-95', 'opacity-0');
+            modalCard.classList.add('scale-100', 'opacity-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeServiceModal() {
+            modalCard.classList.remove('scale-100', 'opacity-100');
+            modalCard.classList.add('scale-95', 'opacity-0');
+            modalBackdrop.classList.remove('opacity-100');
+            setTimeout(() => {
+                modalBackdrop.classList.add('pointer-events-none');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeServiceModal();
+        });
+        modalBackdrop.addEventListener('click', (e) => {
+            if (e.target === modalBackdrop) closeServiceModal();
         });
     </script>
 </body>

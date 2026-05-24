@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Renovations & Contracting | [Company Name]</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Get in touch with [Company Name], your local licensed home remodeler in [Location, State]. Book a property walkthrough for your kitchen, bath, or deck renovation.">
+    <meta name="author" content="[Company Name]">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="./contact.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Us - Renovations & Contracting | [Company Name]">
+    <meta property="og:description" content="Get in touch with [Company Name], your local licensed home remodeler in [Location, State]. Book a property walkthrough for your kitchen, bath, or deck renovation.">
+    <meta property="og:url" content="./contact.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="og:site_name" content="[Company Name]">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us - Renovations & Contracting | [Company Name]">
+    <meta name="twitter:description" content="Get in touch with [Company Name], your local licensed home remodeler in [Location, State]. Book a property walkthrough for your kitchen, bath, or deck renovation.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&h=630&q=80">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS v3 via Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0b1329',
+                            slate: '#334155',
+                            lightslate: '#64748b',
+                            white: '#ffffff',
+                            cream: '#f8fafc',
+                            accent: '#f59e0b',
+                            accentHover: '#d97706',
+                            accentLight: '#fef3c7',
+                            darknavy: '#070b19',
+                            cardbg: '#ffffff'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        body: ['"Inter"', 'sans-serif']
+                    },
+                    boxShadow: {
+                        premium: '0 20px 40px -15px rgba(15, 23, 42, 0.05)',
+                        glow: '0 0 20px rgba(245, 158, 11, 0.15)',
+                        cardhover: '0 30px 60px -10px rgba(15, 23, 42, 0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        @keyframes pulse-gold {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        .pulse-gold-ring { animation: pulse-gold 2s infinite; }
+    </style>
+</head>
+<body class="font-body bg-brand-cream text-brand-navy overflow-x-hidden antialiased">
+
+    <!-- HEADER: Navigation & Topbar -->
+    <header id="main-header" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
+        <!-- TOP UTILITY BAR -->
+        <div class="bg-brand-navy text-white text-xs py-2 px-4 border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                <div class="flex items-center gap-2">
+                    <span class="inline-flex items-center justify-center bg-brand-accent text-brand-navy font-bold px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">
+                        <i class="fa-solid fa-shield-halved mr-1" aria-hidden="true"></i> LICENSED & INSURED
+                    </span>
+                    <span class="text-slate-400">Residential Remodeling & General Contracting</span>
+                </div>
+                <div class="flex items-center gap-4 text-slate-300">
+                    <a href="tel:[Phone Number]" aria-label="Call [Company Name] at [Phone Number]" class="hover:text-brand-accent transition duration-150 flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-brand-accent" aria-hidden="true"></i> [Phone Number]
+                    </a>
+                    <span class="hidden md:inline">|</span>
+                    <span class="hidden md:flex items-center gap-1.5">
+                        <i class="fa-regular fa-clock text-brand-accent" aria-hidden="true"></i> Mon - Fri: 8AM - 7PM
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN HEADER CONTAINER -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Block -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="./index.html" aria-label="Go to home page" class="flex items-center gap-3">
+                        <div class="bg-brand-navy p-2.5 rounded-lg flex items-center justify-center text-white relative">
+                            <i class="fa-solid fa-house-chimney-window text-2xl text-brand-accent" aria-hidden="true"></i>
+                            <div class="absolute -top-1 -right-1 w-3 h-3 bg-brand-accent rounded-full border border-brand-navy"></div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-heading font-extrabold text-xl tracking-tight text-brand-navy leading-none">[COMPANY NAME]</span>
+                            <span class="text-[10px] text-brand-lightslate uppercase tracking-widest font-semibold mt-0.5">RENOVATIONS</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation Menu (Contact Page Active Link) -->
+                <nav class="hidden md:flex space-x-8" aria-label="Main navigation menu">
+                    <a href="./index.html" aria-label="Navigate to Home page" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="./services.html" aria-label="Navigate to Services page" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="./about.html" aria-label="Navigate to About page" class="text-brand-navy hover:text-brand-accent font-medium text-sm transition-all duration-150 relative group">
+                        About Us
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="./contact.html" aria-label="Navigate to Contact page" class="text-brand-accent font-semibold text-sm transition-all duration-150 relative group">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-accent"></span>
+                    </a>
+                </nav>
+                
+                <!-- Desktop Navigation CTA -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="./contact.html" aria-label="Get started on a free estimate" class="bg-brand-navy text-white hover:bg-brand-accent hover:text-brand-navy px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide shadow-premium border-2 border-brand-navy hover:border-brand-accent transition duration-200">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Mobile Navigation Menu Toggle -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-toggle" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-brand-navy hover:text-brand-accent hover:bg-slate-100 focus:outline-none transition duration-150" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle mobile navigation menu">
+                        <span class="sr-only">Open main menu</span>
+                        <i id="hamburger-icon" class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Slide Drawer Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-50 bg-brand-navy/60 backdrop-blur-sm transition-opacity duration-300">
+            <div class="fixed inset-y-0 right-0 w-4/5 max-w-sm bg-white shadow-2xl flex flex-col p-6 space-y-6 transform translate-x-full transition-transform duration-300 ease-out" id="mobile-menu-drawer">
+                <div class="flex items-center justify-between">
+                    <a href="./index.html" class="flex items-center gap-2">
+                        <span class="font-heading font-extrabold text-lg text-brand-navy">[COMPANY NAME]</span>
+                    </a>
+                    <button id="mobile-menu-close" aria-label="Close mobile navigation menu" class="text-brand-navy hover:text-brand-accent p-1">
+                        <i class="fa-solid fa-xmark text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+                
+                <div class="flex flex-col space-y-4 font-medium text-lg pt-4">
+                    <a href="./index.html" aria-label="Navigate to Home page" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
+                        <span>Home</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300" aria-hidden="true"></i>
+                    </a>
+                    <a href="./services.html" aria-label="Navigate to Services page" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
+                        <span>Services</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300" aria-hidden="true"></i>
+                    </a>
+                    <a href="./about.html" aria-label="Navigate to About page" class="text-brand-navy hover:text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between">
+                        <span>About Us</span> <i class="fa-solid fa-chevron-right text-xs text-slate-300" aria-hidden="true"></i>
+                    </a>
+                    <a href="./contact.html" aria-label="Navigate to Contact page" class="text-brand-accent py-2 border-b border-slate-100 flex items-center justify-between font-semibold">
+                        <span>Contact</span> <i class="fa-solid fa-chevron-right text-xs text-brand-accent" aria-hidden="true"></i>
+                    </a>
+                </div>
+                
+                <div class="pt-6 flex flex-col space-y-3">
+                    <a href="tel:[Phone Number]" aria-label="Call direct [Phone Number]" class="flex items-center justify-center gap-2 bg-slate-100 text-brand-navy py-3 rounded-lg font-semibold border border-slate-200">
+                        <i class="fa-solid fa-phone text-brand-accent" aria-hidden="true"></i> [Phone Number]
+                    </a>
+                    <a href="./contact.html" aria-label="Request a free estimate" class="flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-accent text-white hover:text-brand-navy py-3 rounded-lg font-semibold shadow-premium transition duration-200">
+                        Get A Free Estimate
+                    </a>
+                </div>
+                
+                <div class="mt-auto text-center text-xs text-brand-lightslate border-t border-slate-100 pt-6">
+                    <p class="font-semibold text-brand-navy">Fully Licensed & Insured</p>
+                    <p class="mt-1">Serving [Location, State] & Surrounding Counties</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- CONTACT US HEADER -->
+        <section class="bg-brand-navy text-white py-16 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-brand-accent/5 pointer-events-none blur-3xl"></div>
+            <div class="max-w-4xl mx-auto px-4 space-y-4 relative z-10">
+                <div class="flex items-center justify-center gap-2 text-brand-accent">
+                    <span class="h-0.5 w-8 bg-brand-accent"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest">GET IN TOUCH</span>
+                    <span class="h-0.5 w-8 bg-brand-accent"></span>
+                </div>
+                <h1 class="font-heading font-extrabold text-3xl sm:text-5xl uppercase tracking-tight leading-tight">
+                    CONTACT OUR TEAM
+                </h1>
+                <p class="text-slate-300 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+                    We are ready to walk your property and help plan your dream kitchen, bath, basement, or composite deck.
+                </p>
+            </div>
+        </section>
+
+        <!-- TWO COLUMN CONTACT AND FORM HUB -->
+        <section class="py-20 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                    
+                    <!-- Left info column -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div class="space-y-4">
+                            <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-brand-navy uppercase tracking-tight leading-tight">
+                                CONNECT WITH A LOCAL EXPERT
+                            </h2>
+                            <p class="text-slate-600">
+                                Send us your project details, and we will schedule an on-site property walkthrough to discuss layouts, materials, and deliver an upfront estimate.
+                            </p>
+                        </div>
+                        
+                        <!-- Contacts list -->
+                        <div class="space-y-4 text-slate-600">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brand-navy border border-slate-200/50 mt-1 flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-brand-navy text-sm">Office Location</span>
+                                    <span class="text-sm">[Street Address, City, State, ZIP]</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brand-navy border border-slate-200/50 mt-1 flex-shrink-0">
+                                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-brand-navy text-sm">Direct Phone</span>
+                                    <a href="tel:[Phone Number]" aria-label="Call direct [Phone Number]" class="text-sm text-slate-600 hover:text-brand-accent transition duration-150">[Phone Number]</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brand-navy border border-slate-200/50 mt-1 flex-shrink-0">
+                                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-brand-navy text-sm">Email Address</span>
+                                    <a href="mailto:[Email Address]" aria-label="Send email to [Email Address]" class="text-sm text-slate-600 hover:text-brand-accent transition duration-150">[Email Address]</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Licenses list -->
+                        <div class="bg-slate-50 border border-slate-200/60 rounded-2xl p-6 space-y-3">
+                            <h4 class="font-heading font-bold text-sm text-brand-navy uppercase tracking-wider">STATE REGISTRATIONS</h4>
+                            <div class="grid grid-cols-2 gap-2 text-xs font-mono text-slate-500">
+                                <div>MD License: <span class="font-bold text-brand-navy">[MHIC Number]</span></div>
+                                <div>VA License: <span class="font-bold text-brand-navy">[VA Number]</span></div>
+                                <div>DC License: <span class="font-bold text-brand-navy">[DC Number]</span></div>
+                            </div>
+                        </div>
+
+                        <!-- MAP PLACEHOLDER -->
+                        <div class="rounded-2xl overflow-hidden shadow-premium border border-slate-200 bg-slate-100 h-64 flex flex-col justify-center items-center p-6 text-center text-slate-400 gap-3">
+                            <i class="fa-solid fa-map-location-dot text-4xl text-brand-accent animate-float"></i>
+                            <div>
+                                <p class="font-bold text-brand-navy text-sm">MAP VIEW PLACEHOLDER</p>
+                                <p class="text-xs text-slate-500 mt-1">Showing service area covering [Location, State] and surrounding areas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Form column -->
+                    <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-100 relative">
+                        <!-- Glassmorphism overlay when loading / success -->
+                        <div id="form-overlay" class="absolute inset-0 bg-white/95 backdrop-blur-sm rounded-3xl flex flex-col items-center justify-center p-8 text-center opacity-0 pointer-events-none transition-all duration-300 z-10" role="alert" aria-live="assertive">
+                            <div id="overlay-loader" class="space-y-4">
+                                <div class="inline-block w-12 h-12 border-4 border-slate-200 border-t-brand-accent rounded-full animate-spin"></div>
+                                <p class="text-brand-navy font-bold">Submitting estimate request...</p>
+                            </div>
+                            <div id="overlay-success" class="space-y-6 hidden">
+                                <div class="w-20 h-20 bg-brand-accentLight border border-brand-accent/20 text-brand-accent rounded-full flex items-center justify-center mx-auto text-4xl pulse-gold-ring">
+                                    <i class="fa-solid fa-check" aria-hidden="true"></i>
+                                </div>
+                                <div class="space-y-2">
+                                    <h3 class="font-heading font-extrabold text-2xl text-brand-navy uppercase">Thank You!</h3>
+                                    <p class="text-slate-600 max-w-md mx-auto">
+                                        Your estimate request has been received. Our team will review the details and contact you within 24 hours to schedule a property walkthrough.
+                                    </p>
+                                </div>
+                                <button onclick="resetEstimateForm()" aria-label="Return back to the lead form" class="bg-brand-navy text-white px-6 py-2.5 rounded-lg font-semibold text-sm">
+                                    Back to Form
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <form id="estimate-form" onsubmit="handleFormSubmit(event)" class="space-y-6" novalidate>
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <!-- First Name -->
+                                <div class="space-y-1.5">
+                                    <label for="form-first-name" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">First Name <span class="text-red-500">*</span></label>
+                                    <input type="text" id="form-first-name" name="firstName" required aria-required="true" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                    <p class="text-xs text-red-500 mt-1 hidden" id="err-first-name">First name is required.</p>
+                                </div>
+                                <!-- Last Name -->
+                                <div class="space-y-1.5">
+                                    <label for="form-last-name" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Last Name <span class="text-red-500">*</span></label>
+                                    <input type="text" id="form-last-name" name="lastName" required aria-required="true" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                    <p class="text-xs text-red-500 mt-1 hidden" id="err-last-name">Last name is required.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Street Address -->
+                            <div class="space-y-1.5">
+                                <label for="form-address" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Street Address <span class="text-red-500">*</span></label>
+                                <input type="text" id="form-address" name="address" required aria-required="true" placeholder="e.g. 123 Main St, [City, State]" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                <p class="text-xs text-red-500 mt-1 hidden" id="err-address">Street address is required.</p>
+                            </div>
+                            
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <!-- Phone -->
+                                <div class="space-y-1.5">
+                                    <label for="form-phone" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Phone Number <span class="text-red-500">*</span></label>
+                                    <input type="tel" id="form-phone" name="phone" required aria-required="true" placeholder="e.g. 123-456-7890" pattern="^\+?[0-9\(\)\-\s]{7,20}$" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                    <p class="text-xs text-red-500 mt-1 hidden" id="err-phone">Please enter a valid phone number (at least 7 digits).</p>
+                                </div>
+                                <!-- Email -->
+                                <div class="space-y-1.5">
+                                    <label for="form-email" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Email Address <span class="text-red-500">*</span></label>
+                                    <input type="email" id="form-email" name="email" required aria-required="true" placeholder="name@domain.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                    <p class="text-xs text-red-500 mt-1 hidden" id="err-email">Please enter a valid email address.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Service Needed Dropdown -->
+                            <div class="space-y-1.5">
+                                <label for="form-service" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Service Required <span class="text-red-500">*</span></label>
+                                <select id="form-service" name="service" required aria-required="true" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm">
+                                    <option value="" disabled selected>Select a service...</option>
+                                    <option value="Kitchen Remodeling">Kitchen Remodeling</option>
+                                    <option value="Bathroom Remodeling">Bathroom Remodeling</option>
+                                    <option value="Whole-Home Remodeling">Whole-Home Remodeling</option>
+                                    <option value="Decks & Porches">Decks & Porches</option>
+                                    <option value="General Contracting / Additions">General Contracting / Additions</option>
+                                    <option value="Other">Other Remodeling Project</option>
+                                </select>
+                                <p class="text-xs text-red-500 mt-1 hidden" id="err-service">Please select a service option.</p>
+                            </div>
+                            
+                            <!-- Project Details -->
+                            <div class="space-y-1.5">
+                                <label for="form-details" class="block text-xs font-bold text-brand-navy uppercase tracking-wider">Describe Your Project <span class="text-red-500">*</span></label>
+                                <textarea id="form-details" name="details" required aria-required="true" rows="4" placeholder="Briefly describe your goals, dimensions, approximate budget or materials desired..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-accent focus:border-transparent focus:outline-none transition duration-150 text-sm"></textarea>
+                                <p class="text-xs text-red-500 mt-1 hidden" id="err-details">Please enter your project details.</p>
+                            </div>
+                            
+                            <button type="submit" aria-label="Submit the estimate request form" class="w-full bg-brand-navy text-white hover:bg-brand-accent hover:text-brand-navy font-bold py-4 rounded-xl shadow-premium border-2 border-brand-navy hover:border-brand-accent transition duration-200 uppercase tracking-wider text-sm flex items-center justify-center gap-2">
+                                <span>Submit Estimate Request</span> <i class="fa-solid fa-paper-plane text-xs" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-300 py-16 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 pb-12 border-b border-slate-800">
+                <div class="space-y-4">
+                    <span class="font-heading font-extrabold text-lg text-white tracking-tight uppercase">[COMPANY NAME]</span>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Licensed & Insured residential general contractor specializing in kitchens, bathrooms, additions, and outdoor construction in [Location, State].
+                    </p>
+                    <div class="text-xs space-y-2 text-slate-400">
+                        <p class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-brand-accent mt-0.5" aria-hidden="true"></i> <span>[Street Address, City, State, ZIP]</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-brand-accent" aria-hidden="true"></i> <span>[Phone Number]</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-brand-accent" aria-hidden="true"></i> <span>[Email Address]</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <span class="font-heading font-extrabold text-sm text-white uppercase tracking-wider">Services</span>
+                    <ul class="text-xs space-y-2 text-slate-400">
+                        <li><a href="./services.html" class="hover:text-brand-accent transition duration-150">Home Remodeling</a></li>
+                        <li><a href="./services.html" class="hover:text-brand-accent transition duration-150">Kitchen Remodeling</a></li>
+                        <li><a href="./services.html" class="hover:text-brand-accent transition duration-150">Bathroom Remodeling</a></li>
+                        <li><a href="./services.html" class="hover:text-brand-accent transition duration-150">General Contractor Additions</a></li>
+                        <li><a href="./services.html" class="hover:text-brand-accent transition duration-150">Wood & Composite Decks</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <span class="font-heading font-extrabold text-sm text-white uppercase tracking-wider">Service Areas</span>
+                    <ul class="text-xs space-y-2 text-slate-400">
+                        <li>[Location 1]</li>
+                        <li>[Location 2]</li>
+                        <li>[Location 3]</li>
+                        <li>[Location 4]</li>
+                        <li>[Location 5]</li>
+                        <li>[Location 6]</li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <span class="font-heading font-extrabold text-sm text-white uppercase tracking-wider">Why Choose Us?</span>
+                    <ul class="text-xs space-y-2 text-slate-400">
+                        <li>• Fully Licensed & Insured</li>
+                        <li>• Local Owner On-Site Daily</li>
+                        <li>• Code-Compliant Sequencing</li>
+                        <li>• Custom Designed Layouts</li>
+                        <li>• Solid Local References</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <div class="flex items-center gap-6">
+                    <p>&copy; 2026 [Company Name] LLC. All Rights Reserved.</p>
+                    <a href="#" aria-label="Privacy Policy page" class="hover:text-brand-accent transition duration-150">Privacy Policy</a>
+                    <a href="#" aria-label="Terms of Service page" class="hover:text-brand-accent transition duration-150">Terms of Service</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="#" aria-label="Visit our Facebook page" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="Visit our Instagram profile" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="Visit our LinkedIn profile" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="Visit our YouTube channel" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-brand-accent hover:bg-slate-750 flex items-center justify-center text-sm transition duration-150">
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PERMANENT FLOATING WHATSAPP BUTTON -->
+    <div class="fixed bottom-6 right-6 z-45 flex items-center gap-3 group">
+        <span class="bg-brand-navy border border-slate-700 text-white text-xs font-semibold py-1.5 px-3 rounded-lg shadow-premium opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+            Chat on WhatsApp!
+        </span>
+        <a href="https://wa.me/[WhatsApp Number]?text=Hi!%20I'm%20interested%20in%20a%20free%20remodeling%20estimate." target="_blank" rel="noopener noreferrer" aria-label="Contact us directly on WhatsApp" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center text-2xl shadow-xl transition-all duration-200 hover:-translate-y-1 relative pulse-gold-ring" style="animation: pulse-gold 2.5s infinite;">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <span class="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full border-2 border-emerald-500 animate-ping"></span>
+        </a>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            }, { passive: true });
+
+            // Mobile menu drawer control
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.offsetWidth;
+                mobileMenu.classList.add('opacity-100');
+                mobileMenuDrawer.classList.remove('translate-x-full');
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-xmark');
+                mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.remove('opacity-100');
+                mobileMenuDrawer.classList.add('translate-x-full');
+                hamburgerIcon.classList.remove('fa-xmark');
+                hamburgerIcon.classList.add('fa-bars');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
+
+            mobileMenuToggle.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('hidden')) {
+                    openMobileMenu();
+                } else {
+                    closeMobileMenu();
+                }
+            });
+
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) closeMobileMenu();
+            });
+        });
+
+        // Contact Lead Form Validation & Submission Logic
+        const formOverlay = document.getElementById('form-overlay');
+        const overlayLoader = document.getElementById('overlay-loader');
+        const overlaySuccess = document.getElementById('overlay-success');
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            
+            // Clean previous validation error messages
+            const inputs = ['first-name', 'last-name', 'address', 'phone', 'email', 'service', 'details'];
+            inputs.forEach(id => {
+                const element = document.getElementById(`form-${id}`);
+                const errElement = document.getElementById(`err-${id}`);
+                if (element) {
+                    element.classList.remove('border-red-500', 'ring-2', 'ring-red-200');
+                }
+                if (errElement) {
+                    errElement.classList.add('hidden');
+                }
+            });
+
+            // Perform Custom Form Validation
+            let isValid = true;
+            
+            const textFields = ['first-name', 'last-name', 'address', 'details', 'service'];
+            textFields.forEach(id => {
+                const element = document.getElementById(`form-${id}`);
+                const errElement = document.getElementById(`err-${id}`);
+                if (element && !element.value.trim()) {
+                    element.classList.add('border-red-500', 'ring-2', 'ring-red-200');
+                    if (errElement) errElement.classList.remove('hidden');
+                    isValid = false;
+                }
+            });
+
+            const emailElement = document.getElementById('form-email');
+            const errEmail = document.getElementById('err-email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailElement && (!emailElement.value.trim() || !emailRegex.test(emailElement.value))) {
+                emailElement.classList.add('border-red-500', 'ring-2', 'ring-red-200');
+                if (errEmail) errEmail.classList.remove('hidden');
+                isValid = false;
+            }
+
+            const phoneElement = document.getElementById('form-phone');
+            const errPhone = document.getElementById('err-phone');
+            const phoneRegex = /^\+?[0-9\(\)\-\s]{7,20}$/;
+            if (phoneElement && (!phoneElement.value.trim() || !phoneRegex.test(phoneElement.value))) {
+                phoneElement.classList.add('border-red-500', 'ring-2', 'ring-red-200');
+                if (errPhone) errPhone.classList.remove('hidden');
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            formOverlay.classList.remove('pointer-events-none');
+            formOverlay.classList.add('opacity-100');
+            overlayLoader.classList.remove('hidden');
+            overlaySuccess.classList.add('hidden');
+            
+            setTimeout(() => {
+                overlayLoader.classList.add('hidden');
+                overlaySuccess.classList.remove('hidden');
+                form.reset();
+            }, 1800);
+        }
+
+        function resetEstimateForm() {
+            formOverlay.classList.add('opacity-0');
+            setTimeout(() => {
+                formOverlay.classList.add('pointer-events-none');
+                overlaySuccess.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
