@@ -1,0 +1,27 @@
+# Task List - Renovations Website Development
+
+- [x] Workspace setup: Create the directory `C:\Users\jesus\.gemini\antigravity\scratch\renovations-website`
+- [x] Initialize `index.html` with:
+  - [x] Google Fonts (Plus Jakarta Sans & Inter)
+  - [x] FontAwesome and Tailwind CSS v3 CDN
+  - [x] SEO-friendly meta tags and semantic HTML structure
+- [x] Implement design layout:
+  - [x] Top utility bar highlighting "Fully Licensed & Insured"
+  - [x] Sticky header with navigation and CTA button
+  - [x] Mobile navigation drawer
+  - [x] Hero section (2-column desktop layout)
+  - [x] Trust statistics counter section
+  - [x] About section with trust messages and founder profile
+  - [x] Services grid with interactive detail popups/modals
+  - [x] "Why Choose Us" interactive benefits showcase
+  - [x] Testimonials section with 3 customer cards
+  - [x] High-conversion contact form section
+  - [x] Multi-column footer with social links and licensing placeholders
+- [x] Implement interactivity & scripts:
+  - [x] Responsive menu controls
+  - [x] Scroll animations and count-up effects
+  - [x] Service detail modal toggles
+  - [x] Benefits slider/tabs switching
+  - [x] Contact form submission validation and success notification
+  - [x] Permanent floating WhatsApp button with tooltip
+- [x] Verification & layout testing
